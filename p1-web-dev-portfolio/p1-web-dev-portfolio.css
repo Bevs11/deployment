@@ -11,7 +11,6 @@ body {
     margin: 0;
     background: url(white-bg.jpg);
     background-color: #e8e8e8;
-    /* White Background   */
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: bottom right;
@@ -28,7 +27,6 @@ button {
     display: flex;
     justify-content: center;
     background-color: rgb(61, 112, 97);
-    /* background-size: 100vw; */
     width: 100vw;
     padding: 0;
     font-size: 40px;
@@ -59,8 +57,6 @@ a:hover {
     transform: scale(1.2);
 
 }
-
-
 
 .header p {
     color: white;
@@ -95,8 +91,6 @@ a:hover {
     width: 100%;
     color: white;
     margin-top: 25px;
-
-
 }
 
 .home-image img {
@@ -135,7 +129,7 @@ a:hover {
     align-items: center;
     padding: 30px;
     width: 100%;
-    height: 120vh;
+    height: 100vh;
 }
 
 .aboutMe-text {
@@ -152,8 +146,8 @@ a:hover {
     font-size: 20px;
 }
 
-.aboutMe-container img {
-    width: 400px;
+.aboutMe-image {
+    width: 300px;
     height: auto;
     border-radius: 5px;
 }
@@ -201,7 +195,7 @@ a:hover {
     border-radius: 5px;
 }
 
-.skills-container h1 {
+.skills-container p {
     text-align: center;
 }
 
@@ -230,7 +224,6 @@ a:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* justify-content: center; */
     height: 100vh;
     padding-top: 10vh;
 }
@@ -242,7 +235,6 @@ a:hover {
 .projects-text {
     padding: 10px;
     font-size: 25px;
-    /* background-color: aquamarine; */
 }
 
 .projects-container img {
@@ -252,7 +244,6 @@ a:hover {
 .projects-layer {
     display: flex;
     flex-direction: row;
-    /* justify-content: center; */
     border: 2px solid rgb(103, 84, 9);
     padding: 10px;
     margin: 20px;
@@ -264,14 +255,11 @@ a:hover {
 .projects-text p {
     font-family: Helvetica;
     font-size: 16px;
-    /* background-color: aqua; */
 }
 
 .projects-text strong {
     font-size: 22px;
 }
-
-
 
 .contact-container {
     display: flex;
@@ -283,10 +271,9 @@ a:hover {
     background: url("leaves.jpg");
     background-size: cover;
     color: white;
-
 }
 
-.contact-container h1 {
+.contact-container p {
     text-align: center;
 }
 
@@ -363,7 +350,6 @@ a:hover {
         font-size: 75%;
         padding: auto 0 auto 0;
     }
-
 
     .header-options-container {
         width: 50%;
@@ -571,11 +557,4 @@ a:hover {
         font-size: 7vw;
         font-weight: bold;
     }
-}
-
-@media only screen and (min-height: 600px) {
-    .aboutMe-container {
-        height: fit-content;
-    }
-
 }
