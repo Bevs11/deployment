@@ -1,0 +1,227 @@
+@media only screen and (max-width: 1400px) {
+
+    body {
+        background-position: bottom right;
+        background-size: 991px 520px;
+    }
+
+    .section-name {
+        font-size: 25px;
+    }
+
+    .header-container {
+        width: 90vw;
+    }
+
+    .header-container p {
+        font-size: 75%;
+        padding: auto 0 auto 0;
+    }
+
+    .header-options-container {
+        width: 50%;
+    }
+
+    .header-options {
+        font-size: 14px;
+    }
+
+    .home-container {
+        height: 100vh;
+    }
+
+    .home-text p:nth-child(2) {
+        font-size: 40px;
+    }
+
+    .home-text p:nth-child(1),
+    .home-text p:nth-child(3) {
+        font-size: 16px;
+    }
+
+    .aboutMe-container {
+        height: 100vh;
+    }
+
+    .aboutMe-container img {
+        width: 30%;
+    }
+
+    .aboutMe-text {
+        width: 60%;
+    }
+
+    .skills-container {
+        display: flex;
+        justify-content: center;
+    }
+
+    .skills-layer1,
+    .skills-layer2 {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .skills-layer2 {
+        width: 65%;
+    }
+
+    .skills-layer1 {
+        width: 80%;
+    }
+
+    .skills-container img {
+        width: 100px;
+    }
+
+    .resume-box {
+        width: 85%;
+    }
+
+    .projects-container {
+        width: 100vw;
+        height: fit-content;
+        margin-bottom: 20px;
+    }
+
+    .projects-box img {
+        width: 30vw;
+    }
+
+    .projects-layer {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .header p {
+        margin: 10px 10px 10px 0;
+    }
+
+    .header-options-container {
+        width: 55%;
+        min-width: 400px;
+        padding: 0;
+    }
+
+    .aboutMe-container {
+        height: fit-content;
+    }
+
+}
+
+@media only screen and (max-width: 767px) {
+    .header-container strong {
+        font-size: 20px;
+    }
+
+    .skills-container {
+        height: fit-content;
+    }
+}
+
+
+@media only screen and (max-width: 576px) {
+
+    body {
+        background-position: bottom right;
+        background-size: 100vw auto;
+    }
+
+    .header {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 100vw;
+    }
+
+    .header-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* background-color: brown; */
+    }
+
+    .header p {
+        color: white;
+        margin: 10px 0 10px 10px;
+        font-size: 20px;
+    }
+
+    .header-options-container {
+        padding-right: 0;
+        width: 70vw;
+        margin-bottom: 10px;
+    }
+
+    .header-options {
+        padding: auto 0 auto 0;
+    }
+
+    .aboutMe-text {
+        width: 90vw;
+    }
+
+    .aboutMe-text p:nth-child(2),
+    .aboutMe-text p:nth-child(3) {
+        font-size: 5vw;
+    }
+
+    .aboutMe-container {
+        display: flex;
+        flex-direction: column;
+        height: fit-content;
+    }
+
+    .aboutMe-container img {
+        width: 50vw;
+
+    }
+
+    .skills-container img {
+        width: 60%;
+    }
+
+    .skills-layer1,
+    .skills-layer2 {
+        display: flex;
+        flex-flow: row wrap;
+        width: 90%;
+    }
+
+    .skills-layer1 div,
+    .skills-layer2 div {
+        width: 70vw;
+    }
+
+    .projects-container {
+        height: fit-content;
+    }
+
+    .projects-container img {
+        width: 50vw;
+
+    }
+
+    .projects-layer {
+        width: 85vw;
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+    .projects-text {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .contact-input-box {
+        width: 90%;
+    }
+
+    .section-name {
+        font-size: 7vw;
+        font-weight: bold;
+    }
+}

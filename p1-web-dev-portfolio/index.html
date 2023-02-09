@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link type="text/css" rel="stylesheet" href="p1-web-dev-portfolio.css">
-    <title>Beverly's Website</title>
+    <link type="text/css" rel="stylesheet" href="styles.css">
+    <title>Beverly's Portfolio Website</title>
 </head>
 
 <body>
@@ -24,15 +24,16 @@
 
     </div>
 
-    <div class="home-container" id="home">
+    <div class="home-container flex-centered" id="home">
         <div class="home-text">
             <p>Hello, my Name is</p>
             <p>BEVERLY MATEO</p>
             <p>I'm a <u>Web Developer</u></p>
         </div>
     </div>
-    <div class="aboutMe-container" id="aboutMe">
-        <img class="aboutMe-image" src="bevphoto.jpg" alt="beverly's photo">
+
+    <div class="aboutMe-container flex-centered" id="aboutMe">
+        <img class="aboutMe-image" src="assets/bevphoto.jpg" alt="beverly's photo">
         <div class="aboutMe-text">
             <p class="section-name">About Me</p>
             <p><strong>Web Developer</strong></p>
@@ -41,43 +42,35 @@
                 is to become a creative and dependable Web Developer that would help business owners grow their
                 businesses by creating beautiful and functional websites.<br><br>
                 My hobbies include: traveling, watching movies and doing digital art. </p>
-            <a href="#contact"><button>Let's Talk</button></a>
+            <a href="#contact">
+                <button>Let's Talk</button>
+            </a>
         </div>
     </div>
-    <div class="skills-container" id="skills">
+
+    <div class="skills-container flex-centered" id="skills">
         <div>
             <p class="section-name">Skills</p>
         </div>
-        <div class="skills-layer1">
-            <div>
-                <div class="skills-box"><img src="html-icon.jpg" alt="html icon"></div>
-                <div class="skills-box"><img src="css-icon.jpg" alt="css icon"></div>
-                <div class="skills-box"><img src="javascript-icon.jpg" alt="javascript icon"></div>
-            </div>
-            <div>
-                <div class="skills-box"><img src="reactjs-logo.jpg" alt="react js icon"></div>
-                <div class="skills-box"><img src="photoshop-icon.jpg" alt="photoshop icon"></div>
-                <div class="skills-box"><img src="illustrator-icon.jpg" alt="illustrator icon"></div>
-            </div>
-        </div>
-        <div class="skills-layer2">
-            <div>
-                <div class="skills-box"><img src="nodejs-icon.jpg" alt="node js icon"></div>
-                <div class="skills-box"><img src="express.png" alt="exress js icon"></div>
-                <div class="skills-box"><img src="php-icon.png" alt="php icon"></div>
-            </div>
-            <div>
-                <div class="skills-box"><img src="mongodb-icon.png" alt="mongodb icon"></div>
-                <div class="skills-box"><img src="mysql-icon.png" alt="my sql icon"></div>
-            </div>
-
+        <div class="skills-layer">
+            <img src="assets/html-icon.jpg" alt="html icon">
+            <img src="assets/css-icon.jpg" alt="css icon">
+            <img src="assets/javascript-icon.jpg" alt="javascript icon">
+            <img src="assets/reactjs-logo.jpg" alt="react js icon">
+            <img src="assets/photoshop-icon.jpg" alt="photoshop icon">
+            <img src="assets/illustrator-icon.jpg" alt="assets/illustrator icon">
+            <img src="assets/nodejs-icon.jpg" alt="node js icon">
+            <img src="assets/php-icon.jpg" alt="php icon">
+            <img src="assets/mongodb-icon.jpg" alt="mongodb icon">
+            <img src="assets/mysql-icon.jpg" alt="my sql icon">
         </div>
     </div>
-    <div class="resume-container" id="resume">
-        <div class="resume-box">
+
+    <div class="resume-container flex-centered" id="resume">
+        <div class="resume-box flex-centered">
             <p class="section-name">View My Resume</p>
             <form action="https://drive.google.com/file/d/16yfSSzGP0dPMfAMsE7Xxp-Nu0mgRC1Rq/view?usp=share_link"
-                method="get">
+                method="get" target="_blank">
                 <button type="submit">Resume</button>
             </form>
 
@@ -86,7 +79,7 @@
     <div class="projects-container" id="projects">
         <p class="section-name">Projects</p>
         <div class="projects-layer project1">
-            <div class="projects-box"><img src="project-1.jpg" alt="website image"></div>
+            <div class="projects-box"><img src="assets/project-1.jpg" alt="website image"></div>
             <div class="projects-text">
                 <strong>Business Website</strong>
                 <p>A website for Jeffries and Madison Photography. This website includes their business name, about
@@ -101,19 +94,19 @@
                     offered, contact information and booking a consultation section. </p>
             </div>
 
-            <div class="projects-box project2"><img src="project-2.jpg" alt="website image"></div>
+            <div class="projects-box project2"><img src="assets/project-2.jpg" alt="website image"></div>
         </div>
         <div class="projects-layer project3">
-            <div class="projects-box"><img src="project-3.jpg" alt="website image"></div>
+            <div class="projects-box"><img src="assets/project-3.jpg" alt="website image"></div>
             <div class="projects-text">
                 <strong>E-Commerce Website</strong>
                 <p>A website for an e-commerce business. This website includes a catalog of all items for sale. The
                     catalog includes several photos, description and price. There is also an order page. </p>
             </div>
-
         </div>
     </div>
-    <div class="contact-container" id="contact">
+
+    <div class="contact-container flex-centered" id="contact">
         <div class="contact-box">
             <p class="section-name">Contact Me</p>
             <div class="contact-input">
@@ -132,12 +125,13 @@
                 <button>Submit</button>
             </div>
             <div class="contact-socialMedia">
-                <a href="https://github.com/Bevs11"><img src="github-icon.png" alt="github icon"></a>
+                <a href="https://github.com/Bevs11" target="_blank"><img src="assets/github-icon.png"
+                        alt="assets/github icon"></a>
 
-                <a href="https://www.linkedin.com/in/beverly-mateo-426b58219/"><img src="linkedin-icon.png"
-                        alt="linkedin icon"></a>
-                <a href="https://web.facebook.com/profile.php?id=100074051976436"><img src="facebook.png"
-                        alt="facebook icon"></a>
+                <a href="https://www.linkedin.com/in/beverly-mateo-426b58219/" target="_blank"><img
+                        src="assets/linkedin-icon.png" alt="linkedin icon"></a>
+                <a href="https://web.facebook.com/profile.php?id=100074051976436" target="_blank"><img
+                        src="assets/facebook.png" alt="facebook icon"></a>
             </div>
         </div>
 
@@ -145,10 +139,9 @@
 
     <div class="footer">
         <div>© 2023 Bev Designs</div>
-        <div>Images from <a href="https://www.pexels.com/"><u>Pexels.com</u></a> and <a
-                href="Canva.com"><u>Canva.com</u></a></div>
+        <div>Images from <a href="https://www.pexels.com/" target="_blank"><u>Pexels.com</u></a> and <a
+                href="https://www.canva.com/" target="_blank"><u>Canva.com</u></a></div>
     </div>
-
 
 </body>
 
