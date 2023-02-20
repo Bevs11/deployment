@@ -1,5 +1,7 @@
+const game = document.getElementById('game');
 const character = document.getElementById("character");
 const block = document.getElementById("block");
+const playAgain = document.getElementById('playAgain');
 
 function jump() {
     if (character.classList != "animate") {
@@ -18,9 +20,15 @@ const checkHit = setInterval(function () {
     if (blockLeft < 20 && blockLeft > 0 && characterTop >= 130) {
         block.style.animation = "none";
         block.style.display = "none";
-        alert("you lose");
-
+        youLose();
     }
-
-
 }, 10);
+
+function youLose() {
+    const lose = document.querySelector('#youLose');
+    lose.classList.remove('youLose');
+}
+
+playAgain.addEventListener('click', function () {
+    location.reload();
+})

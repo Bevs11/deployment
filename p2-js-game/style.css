@@ -4,17 +4,23 @@
 }
 
 #game {
+    position: relative;
     width: 500px;
     height: 200px;
     border: 1px solid black;
+    margin: 20px auto;
+    overflow: hidden;
+}
+
+#playAgain {
+    background-color: aquamarine;
+    border-radius: 5px;
 }
 
 #character {
-    width: 20px;
-    height: 50px;
-    background-color: aquamarine;
-    position: relative;
-    top: 150px;
+    width: 50px;
+    position: absolute;
+    bottom: 0;
 
 }
 
@@ -41,11 +47,11 @@
 }
 
 #block {
-    width: 20px;
-    height: 20px;
-    background-color: bisque;
+    width: 40px;
+    height: 40px;
+    /* background-color: bisque; */
     position: relative;
-    top: 130px;
+    top: 110px;
     left: 480px;
     animation: block 1s infinite linear;
 }
@@ -56,8 +62,19 @@
     }
 
     100% {
-        left: -40px;
+        left: -30px;
     }
+}
 
+.flex-centered {
+    display: flex;
+    justify-content: center;
+}
 
+.youLose {
+    visibility: hidden;
+}
+
+.exit {
+    text-align: center;
 }
