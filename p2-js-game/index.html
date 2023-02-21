@@ -11,13 +11,25 @@
 </head>
 
 <body>
+    <div class="flex-centered">
+        <img src="assets/title.jpg" class="title">
+    </div>
+
     <div id="game">
-        <div id="youLose" class="exit youLose">
-            <h1>You Lose</h1>
+        <div id="youLose" class="youLose text">
+            <h1>Your Score:</h1>
             <button id="playAgain">Play Again?</button>
+        </div>
+        <div class="start text absolute" id="start">
+            <h1>Let's Play!</h1>
+            <button id="start">Start</button>
         </div>
         <img src="assets/ghost.png" id="character">
         <img src="assets/rock4.png" id="block">
+    </div>
+    <div class="text">
+        <strong>Instructions:</strong>
+        <p>Help the ghost avoid the obstructions. Click anywhere on the page to make the character jump.</p>
     </div>
 
 </body>

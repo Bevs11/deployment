@@ -2,6 +2,7 @@ const game = document.getElementById('game');
 const character = document.getElementById("character");
 const block = document.getElementById("block");
 const playAgain = document.getElementById('playAgain');
+const startGame = document.getElementById('start');
 
 function jump() {
     if (character.classList != "animate") {
@@ -13,9 +14,10 @@ function jump() {
     }, 500)
 }
 
+
 const checkHit = setInterval(function () {
-    let characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top"));
-    let blockLeft = parseInt(window.getComputedStyle(block).getPropertyValue("left"));
+    let characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top")); // position of character
+    let blockLeft = parseInt(window.getComputedStyle(block).getPropertyValue("left")); //position of block
 
     if (blockLeft < 20 && blockLeft > 0 && characterTop >= 130) {
         block.style.animation = "none";
@@ -30,5 +32,10 @@ function youLose() {
 }
 
 playAgain.addEventListener('click', function () {
-    location.reload();
-})
+    location.reload(); //refresh
+});
+
+startGame.addEventListener('click', function () {
+    block.classList.add('block-move');
+    startGame.classList.add('hidden');
+});
