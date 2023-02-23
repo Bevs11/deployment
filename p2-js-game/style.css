@@ -61,14 +61,14 @@ body {
     position: absolute;
     /* top: 110px; */
     bottom: 0;
-    /*position from under text*/
     left: 480px;
 
 }
 
 .block-move {
     animation: block infinite linear;
-    animation-duration: 900ms;
+    /* animation-duration: 900ms; */
+    /* speed of obstruction */
 }
 
 /* .block-move2 {

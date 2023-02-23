@@ -1,7 +1,9 @@
 const game = document.getElementById('game');
 const character = document.getElementById("character");
 const block = document.getElementById("block");
-const block2 = document.getElementById("block2");
+// const block2 = document.getElementById("block2");
+const blockMove = document.querySelector('.block-move');
+const blockMoveRandom = document.querySelector('.moveRandom')
 const playAgain = document.getElementById('playAgain');
 const startGame = document.getElementById('start');
 const movingGround = document.getElementById('moving-ground');
@@ -9,6 +11,7 @@ const movingGround2 = document.getElementById('moving-ground2');
 const movingBuildings = document.getElementById('buildings');
 const movingBuildings2 = document.getElementById('buildings2');
 const timer = document.getElementById('timer');
+let currentSpeed = 0;
 
 function jump() {
     if (character.classList != "animate") {
@@ -59,7 +62,9 @@ startGame.addEventListener('click', function () {
     movingBuildings2.classList.add('moving-buildings2');
     startGame.classList.add('hidden');
     gameOn = 1;
+    blockSpeed();
     setInterval(timerFunction, 1000);
+    setInterval(blockSpeed, currentSpeed);
 });
 
 
@@ -69,9 +74,33 @@ function timerFunction() {
     if (gameOn == 1) {
         console.log(sec);
         sec++;
+        blockSpeed();
     } else {
         clearInterval(timerFunction);
         return sec;
     }
 }
+
+
+const speed1 = [600, 700, 800, 900, 1000, 1100, 1200, 1300];
+const speed2 = [500, 600, 650, 700, 750, 800, 900, 950, 1000];
+const speed3 = [400, 450, 500, 600, 700, 800, 900, 950, 1000];
+const speed4 = [300, 400, 450, 500, 600, 700, 800, 900, 950];
+
+
+
+function blockSpeed() {
+
+    // let j = 1
+    // if (sec >= 30) {
+
+    // }
+
+    let num = Math.floor(Math.random() * speed1.length);
+    currentSpeed = speed1[num];
+    blockMoveRandom.style.animationDuration = `${speed1[num]}ms`;
+    console.log(parseInt(speed1[num]));
+}
+
+
 
