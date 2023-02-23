@@ -27,6 +27,7 @@ body {
     width: 50px;
     position: absolute;
     bottom: 0;
+    left: 0;
 
 }
 
@@ -52,12 +53,14 @@ body {
     }
 }
 
-#block {
+#block,
+#block2 {
     width: 40px;
     height: 40px;
     /* background-color: bisque; */
-    position: relative;
-    top: 110px;
+    position: absolute;
+    /* top: 110px; */
+    bottom: 0;
     /*position from under text*/
     left: 480px;
 
@@ -68,6 +71,11 @@ body {
     animation-duration: 900ms;
 }
 
+/* .block-move2 {
+    animation: block infinite linear;
+    animation-duration: 1200ms;
+} */
+
 @keyframes block {
     0% {
         left: 480px;
@@ -75,6 +83,80 @@ body {
 
     100% {
         left: -30px;
+    }
+}
+
+#ground,
+#moving-ground {
+
+    position: absolute;
+    width: 500px;
+    left: 0;
+    bottom: 0;
+}
+
+#moving-ground2 {
+
+    position: absolute;
+    width: 500px;
+    left: 500px;
+    bottom: 0;
+}
+
+#buildings {
+    position: absolute;
+    width: 500px;
+    left: 0;
+    bottom: 30px;
+}
+
+#buildings2 {
+    position: absolute;
+    width: 500px;
+    left: 500px;
+    bottom: 30px;
+}
+
+
+.moving-ground {
+    animation: move infinite linear;
+    animation-duration: 4s;
+}
+
+.moving-ground2 {
+    animation: move2 infinite linear;
+    animation-duration: 4s;
+    animation-delay: 2s;
+}
+
+.moving-buildings {
+    animation: move infinite linear;
+    animation-duration: 6s;
+}
+
+.moving-buildings2 {
+    animation: move2 infinite linear;
+    animation-duration: 6s;
+    animation-delay: 3s;
+}
+
+@keyframes move {
+    0% {
+        left: 500px;
+    }
+
+    100% {
+        left: -500px;
+    }
+}
+
+@keyframes move2 {
+    0% {
+        left: 500px;
+    }
+
+    100% {
+        left: -500px;
     }
 }
 
@@ -108,4 +190,8 @@ body {
     left: 50%;
     /* margin: 0 auto; */
     transform: translateX(-50%);
+}
+
+.inline-block {
+    display: inline-block
 }
