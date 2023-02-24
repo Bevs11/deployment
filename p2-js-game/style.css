@@ -18,6 +18,28 @@ body {
     /* to keep the objects to stay inside box */
 }
 
+#moon {
+    position: absolute;
+    /* top: 10px; */
+    left: 0px;
+
+}
+
+.moonAnimation {
+    animation: moonAnimate 60s infinite linear;
+}
+
+@keyframes moonAnimate {
+
+    0% {
+        left: 0px;
+    }
+
+    100% {
+        left: -480px;
+    }
+}
+
 #playAgain {
     background-color: aquamarine;
     border-radius: 5px;
@@ -34,6 +56,7 @@ body {
 .animate {
     animation: jump 500ms;
 }
+
 
 @keyframes jump {
     0% {
@@ -57,9 +80,9 @@ body {
 #block2 {
     width: 40px;
     height: 40px;
-    /* background-color: bisque; */
+
     position: absolute;
-    /* top: 110px; */
+
     bottom: 0;
     left: 480px;
 
@@ -67,14 +90,10 @@ body {
 
 .block-move {
     animation: block infinite linear;
-    /* animation-duration: 900ms; */
+    animation-duration: 900ms;
     /* speed of obstruction */
 }
 
-/* .block-move2 {
-    animation: block infinite linear;
-    animation-duration: 1200ms;
-} */
 
 @keyframes block {
     0% {
@@ -188,7 +207,6 @@ body {
     position: absolute;
     top: 5px;
     left: 50%;
-    /* margin: 0 auto; */
     transform: translateX(-50%);
 }
 
