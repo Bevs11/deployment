@@ -1,10 +1,9 @@
 const game = document.getElementById('game');
 const character = document.getElementById("character");
-const block = document.getElementById("block");
+const block1 = document.getElementById("block");
 const block2 = document.getElementById("block2");
+const block3 = document.getElementById("block3");
 const moonMove = document.getElementById("moon");
-// const blockMove = document.querySelector('.block-move');
-// const blockMoveRandom = document.querySelector('.moveRandom')
 const playAgain = document.getElementById('playAgain');
 const startGame = document.getElementById('start');
 const movingGround = document.getElementById('moving-ground');
@@ -32,6 +31,38 @@ setInterval(function () {
         character.style.top = (characterTop + 3) + "px";
     }
 }, 20);
+
+function blockMove3() {
+
+    let blockLeft3 = parseInt(window.getComputedStyle(block3).getPropertyValue('left'));
+    if (blockLeft3 <= -30) {
+        block3.style.left = "500px";
+    } else {
+        block3.style.left = (blockLeft3 - 3) + "px";
+    }
+
+}
+function blockMove1() {
+
+    let blockLeft1 = parseInt(window.getComputedStyle(block1).getPropertyValue('left'));
+    if (blockLeft1 <= -30) {
+        block1.style.left = "500px";
+    } else {
+        block1.style.left = (blockLeft1 - 3) + "px";
+    }
+}
+function blockMove2() {
+
+    let blockLeft2 = parseInt(window.getComputedStyle(block2).getPropertyValue('left'));
+    if (blockLeft2 <= -30) {
+        block2.style.left = "500px";
+    } else {
+        block2.style.left = (blockLeft2 - 3) + "px";
+    }
+
+
+}
+
 
 // function jump() {
 //     jumping = 1;
@@ -97,6 +128,7 @@ function youLose() {
     movingGround2.classList.remove('moving-ground2');
     movingBuildings.classList.remove('moving-buildings');
     movingBuildings2.classList.remove('moving-buildings2');
+    block3.classList.add('hidden');
     gameOn = 0;
 
     playerCurrentScore.classList.add('hidden');
@@ -106,8 +138,8 @@ playAgain.addEventListener('click', function () {
     location.reload(); //refresh
 });
 
+let seconds = 0;
 startGame.addEventListener('click', function () {
-    let seconds = 0;
 
     moonMove.classList.add('moonAnimation');
     movingGround.classList.add('moving-ground');
@@ -117,18 +149,25 @@ startGame.addEventListener('click', function () {
     startGame.classList.add('hidden');
     block.classList.add('block-move');
     block2.classList.add('block-move2');
+    setInterval(blockMove3, 20);
+    setInterval(blockMove1, 30);
+    setInterval(blockMove2, 40);
     gameOn = 1;
     setInterval(function () {
         playerCurrentScore.innerHTML = `Score: ${seconds}`;
         console.log(seconds);
         seconds += 1;
     }, 1000)
-
-
-
-
-
+    // setInterval(timerFunction(), 1000);
 });
+
+function timerFunction() {
+    playerCurrentScore.innerHTML = `Score: ${seconds}`;
+    console.log(seconds);
+    seconds += 1;
+    return seconds;
+}
+
 
 
 // let sec = 0;

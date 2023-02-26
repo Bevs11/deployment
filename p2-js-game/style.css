@@ -77,7 +77,9 @@ body {
     }
 } */
 
-#block {
+#block,
+#block2,
+#block3 {
     width: 40px;
     height: 40px;
     position: absolute;
@@ -85,22 +87,14 @@ body {
     left: 500px;
 }
 
-#block2 {
-    width: 40px;
-    height: 40px;
-    position: absolute;
-    bottom: 0px;
-    left: 500px;
-}
-
-
-.block-move {
+/* .block-move {
     animation: block infinite linear;
     animation-duration: 3000ms;
-    /* speed of obstruction */
+    speed of obstruction
 }
 
-.block-move-duration-0 {
+*/
+/* .block-move-duration-0 {
     animation-duration: 0;
 }
 
@@ -118,12 +112,12 @@ body {
 
 .block-move-duration-4 {
     animation-duration: 600ms;
-}
+} */
 
 
-.block-move2 {
+/* .block-move2 {
     animation: block infinite linear;
-    /*return */
+
     animation-duration: 2000ms;
 }
 
@@ -135,7 +129,7 @@ body {
     100% {
         left: -30px;
     }
-}
+} */
 
 #ground,
 #moving-ground {
