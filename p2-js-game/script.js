@@ -32,13 +32,18 @@ setInterval(function () {
     }
 }, 20);
 
+let playerStarPoints = 0;
 function blockMove3() {
+    if (gameOn == 1) {
 
-    let blockLeft3 = parseInt(window.getComputedStyle(block3).getPropertyValue('left'));
-    if (blockLeft3 <= -30) {
-        block3.style.left = "500px";
-    } else {
-        block3.style.left = (blockLeft3 - 3) + "px";
+        let blockLeft3 = parseInt(window.getComputedStyle(block3).getPropertyValue('left'));
+        if (blockLeft3 <= -30) {
+            block3.style.left = "500px";
+            block3.style.visibility = 'visible';
+            // playerStarPoints++;
+        } else {
+            block3.style.left = (blockLeft3 - 3) + "px";
+        }
     }
 
 }
@@ -63,38 +68,6 @@ function blockMove2() {
 
 }
 
-
-// function jump() {
-//     jumping = 1;
-//     let jumpInterval = setInterval(function () {
-//         let characterTop = parseInt(window.getComputedStyle(character).getPropertyValue('top'));
-
-//         if (jumpCount > 3) {
-//             clearInterval(jumpInterval);
-//             jumping = 0;
-//             jumpCount = 0;
-//         }
-//         character.style.top = (characterTop - 50) + "px";
-//         jumpCount++;
-//     }, 300);
-// };
-
-// function jump() {
-//     jumping = 1;
-//     let jumpCount = 0;
-//     let jumpInterval = setInterval(function () {
-//         let characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top"));
-//         if (jumpCount < 2 && characterTop > 0) {
-//             character.style.top = (characterTop - 40) + "px";
-//         }
-//         if (jumpCount >= 2) {
-//             clearInterval(jumpInterval);
-//             jumping = 0;
-//             jumpCount = 0;
-//         }
-//         jumpCount++;
-//     }, 40);
-// }
 function jump() {
     let characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top"));
     if (characterTop >= 130) {
@@ -108,7 +81,7 @@ const checkHit = setInterval(function () {
     let characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top")); // position of character
     let blockLeft = parseInt(window.getComputedStyle(block).getPropertyValue("left")); //position of block
     let blockLeft2 = parseInt(window.getComputedStyle(block2).getPropertyValue("left")); //position of block
-    if ((blockLeft < 20 || blockLeft2 < 20) && (blockLeft > 0 || blockLeft2 > 0) && characterTop >= 130) {
+    if ((blockLeft < 50 || blockLeft2 < 50) && (blockLeft > 30 || blockLeft2 > 30) && characterTop >= 130) {
         block.style.animation = "none";
         block.style.display = "none";
         block2.style.animation = "none";
@@ -117,6 +90,19 @@ const checkHit = setInterval(function () {
     }
 
 }, 10);
+
+const starPoints = setInterval(function () {
+    let characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top")); // position of character
+    let blockLeft = parseInt(window.getComputedStyle(block).getPropertyValue("left")); //position of block
+    let blockLeft3 = parseInt(window.getComputedStyle(block3).getPropertyValue("left")); //position of block
+    playerCurrentScore.innerHTML = `Score: ${playerStarPoints}`;
+    if (blockLeft3 <= 70 && blockLeft >= 0 && characterTop <= 70) {
+        console.log(playerStarPoints + 1);
+        playerStarPoints++;
+        block3.style.visibility = 'hidden';
+    }
+
+}, 120);
 
 let gameOn;
 
@@ -129,16 +115,18 @@ function youLose() {
     movingBuildings.classList.remove('moving-buildings');
     movingBuildings2.classList.remove('moving-buildings2');
     block3.classList.add('hidden');
+    block3.style.visibility = 'hidden';
     gameOn = 0;
-
+    score.innerText = `${playerStarPoints}`;
     playerCurrentScore.classList.add('hidden');
+
 }
 
 playAgain.addEventListener('click', function () {
     location.reload(); //refresh
 });
 
-let seconds = 0;
+
 startGame.addEventListener('click', function () {
 
     moonMove.classList.add('moonAnimation');
@@ -147,46 +135,14 @@ startGame.addEventListener('click', function () {
     movingBuildings.classList.add('moving-buildings');
     movingBuildings2.classList.add('moving-buildings2');
     startGame.classList.add('hidden');
-    block.classList.add('block-move');
-    block2.classList.add('block-move2');
-    setInterval(blockMove3, 20);
-    setInterval(blockMove1, 30);
-    setInterval(blockMove2, 40);
+
+    setInterval(blockMove3, 18);
+    setInterval(blockMove1, 9);
+    setInterval(blockMove2, 12);
     gameOn = 1;
-    setInterval(function () {
-        playerCurrentScore.innerHTML = `Score: ${seconds}`;
-        console.log(seconds);
-        seconds += 1;
-    }, 1000)
-    // setInterval(timerFunction(), 1000);
+
 });
 
-function timerFunction() {
-    playerCurrentScore.innerHTML = `Score: ${seconds}`;
-    console.log(seconds);
-    seconds += 1;
-    return seconds;
-}
-
-
-
-// let sec = 0;
-
-// function timerFunction() {
-
-//     console.log(sec);
-//     playerCurrentScore.innerHTML = `Score: ${sec}`;
-//     score.innerText = seconds;
-//     sec++;
-
-// } else {
-//     clearInterval(timerFunction);
-
-//     return sec;
-// }
-
-
-// timerFunction();
 
 const speed1 = [600, 700, 800, 900, 1000, 1100, 1200, 1300];
 const speed2 = [500, 600, 650, 700, 750, 800, 900, 950, 1000];
