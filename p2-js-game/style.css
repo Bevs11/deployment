@@ -19,6 +19,7 @@ body {
 }
 
 #moon {
+    z-index: -1;
     position: absolute;
     /* top: 10px; */
     left: 0px;
@@ -48,12 +49,12 @@ body {
 #character {
     width: 50px;
     position: absolute;
-    bottom: 0;
+    bottom: 20;
     left: 0;
 
 }
 
-.animate {
+/* .animate {
     animation: jump 500ms;
 }
 
@@ -74,26 +75,57 @@ body {
     100% {
         top: 150px;
     }
+} */
+
+#block {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    bottom: 0;
+    left: 500px;
 }
 
-#block,
 #block2 {
     width: 40px;
     height: 40px;
-
     position: absolute;
-
-    bottom: 0;
-    left: 480px;
-
+    bottom: 0px;
+    left: 500px;
 }
+
 
 .block-move {
     animation: block infinite linear;
-    animation-duration: 900ms;
+    animation-duration: 3000ms;
     /* speed of obstruction */
 }
 
+.block-move-duration-0 {
+    animation-duration: 0;
+}
+
+.block-move-duration-1 {
+    animation-duration: 1200ms;
+}
+
+.block-move-duration-2 {
+    animation-duration: 1000ms;
+}
+
+.block-move-duration-3 {
+    animation-duration: 800ms;
+}
+
+.block-move-duration-4 {
+    animation-duration: 600ms;
+}
+
+
+.block-move2 {
+    animation: block infinite linear;
+    /*return */
+    animation-duration: 2000ms;
+}
 
 @keyframes block {
     0% {
@@ -177,6 +209,15 @@ body {
     100% {
         left: -500px;
     }
+}
+
+#currentScore {
+    width: 80px;
+    position: absolute;
+    color: white;
+    right: 50px;
+    top: 5px;
+    z-index: 1;
 }
 
 .flex-centered {
