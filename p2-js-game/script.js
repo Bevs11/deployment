@@ -29,13 +29,21 @@ hardBtn.addEventListener('click', function () {
 });
 
 
-let jumping = 0;
+
 let gravity = setInterval(function () {
     let characterTop = parseInt(window.getComputedStyle(character).getPropertyValue('top'));
-    if (jumping == 0 && characterTop < 130) {
+    if (characterTop < 130) {
         character.style.top = (characterTop + 3) + "px";
     }
 }, 20);
+
+function jump() {
+    let characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top"));
+    if (characterTop >= 130) {
+        character.style.top = (characterTop - 80) + "px";
+
+    }
+}
 
 let playerStarPoints = 0;
 function starMove() {
@@ -77,13 +85,7 @@ function blockMove2() {
 
 }
 
-function jump() {
-    let characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top"));
-    if (characterTop >= 130) {
-        character.style.top = (characterTop - 80) + "px";
 
-    }
-}
 
 
 const checkHit = setInterval(function () {
@@ -120,7 +122,7 @@ let gameOn;
 
 function youLose() {
     const lose = document.querySelector('#youLose');
-    lose.classList.remove('youLose');
+    lose.classList.remove('hidden');
     moonMove.classList.remove('moonAnimation');
     movingGround.classList.remove('moving-ground');
     movingGround2.classList.remove('moving-ground2');
