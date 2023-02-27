@@ -153,11 +153,11 @@ startGame.addEventListener('click', function () {
     if (hard == 1) {
         setInterval(blockMove2, 12);
     }
+    setInterval(starMove, 18);
+    setInterval(blockMove1, 9);
 
 });
 
-setInterval(starMove, 18);
-setInterval(blockMove1, 9);
 
 
 
