@@ -26,7 +26,7 @@
         <img src="assets/ghost.png" id="character">
         <img src="assets/obstruction3.png" id="block">
         <img src="assets/obstruction1.png" id="block2">
-        <img src="assets/star.png" id="block3">
+        <img src="assets/star.png" id="star">
         <img src="assets/moon2.png" id="moon">
 
         <div id="currentScore"></div>
@@ -38,16 +38,21 @@
             </div>
             <button id="playAgain">Play Again?</button>
         </div>
-        <div class="start text absolute" id="start">
+        <div class="start text absolute hidden" id="start">
             <h1>Let's Play!</h1>
             <button id="start">Start</button>
+        </div>
+        <div class="text absolute" id="difficulty">
+            <p>Choose difficulty of the game</p>
+            <button id="easy" class="difficulty-btn">Easy</button>
+            <button id="hard" class="difficulty-btn">Hard</button>
         </div>
 
 
     </div>
     <div class="text">
         <strong>Instructions:</strong>
-        <p>Help the character avoid the ghosts and get all the stars. Click anywhere on the page to make the character
+        <p>Help the character get the stars and avoid all the ghosts . Click anywhere on the page to make the character
             jump.</p>
     </div>
 

@@ -18,10 +18,10 @@ body {
     /* to keep the objects to stay inside box */
 }
 
+
 #moon {
     z-index: -1;
     position: absolute;
-    /* top: 10px; */
     left: 0px;
 
 }
@@ -54,28 +54,6 @@ body {
 
 }
 
-/* .animate {
-    animation: jump 500ms;
-}
-
-
-@keyframes jump {
-    0% {
-        top: 150px;
-    }
-
-    30% {
-        top: 80px;
-    }
-
-    70% {
-        top: 80px;
-    }
-
-    100% {
-        top: 150px;
-    }
-} */
 
 #block,
 #block2 {
@@ -86,57 +64,13 @@ body {
     left: 500px;
 }
 
-#block3 {
+#star {
     width: 30px;
     height: 30px;
     position: absolute;
     top: 80px;
     left: 500px;
 }
-
-/* .block-move {
-    animation: block infinite linear;
-    animation-duration: 3000ms;
-    speed of obstruction
-}
-
-*/
-/* .block-move-duration-0 {
-    animation-duration: 0;
-}
-
-.block-move-duration-1 {
-    animation-duration: 1200ms;
-}
-
-.block-move-duration-2 {
-    animation-duration: 1000ms;
-}
-
-.block-move-duration-3 {
-    animation-duration: 800ms;
-}
-
-.block-move-duration-4 {
-    animation-duration: 600ms;
-} */
-
-
-/* .block-move2 {
-    animation: block infinite linear;
-
-    animation-duration: 2000ms;
-}
-
-@keyframes block {
-    0% {
-        left: 480px;
-    }
-
-    100% {
-        left: -30px;
-    }
-} */
 
 #ground,
 #moving-ground {
@@ -254,4 +188,12 @@ body {
 
 .inline-block {
     display: inline-block
+}
+
+.difficulty-btn {
+    width: 50px;
+    background-color: yellowgreen;
+    margin: 10px;
+    border: 2px solid white;
+    border-radius: 5px;
 }
