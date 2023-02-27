@@ -110,7 +110,7 @@ body {
 }
 
 .moving-ground2 {
-    animation: move2 infinite linear;
+    animation: move infinite linear;
     animation-duration: 4s;
     animation-delay: 2s;
 }
@@ -121,7 +121,7 @@ body {
 }
 
 .moving-buildings2 {
-    animation: move2 infinite linear;
+    animation: move infinite linear;
     animation-duration: 6s;
     animation-delay: 3s;
 }
@@ -136,15 +136,6 @@ body {
     }
 }
 
-@keyframes move2 {
-    0% {
-        left: 500px;
-    }
-
-    100% {
-        left: -500px;
-    }
-}
 
 #currentScore {
     width: 80px;
