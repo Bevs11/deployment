@@ -50,6 +50,7 @@ body {
     width: 50px;
     position: absolute;
     bottom: 20;
+
     left: 20px;
 
 }
@@ -106,24 +107,24 @@ body {
 
 .moving-ground {
     animation: move infinite linear;
-    animation-duration: 4s;
+    animation-duration: 6s;
 }
 
 .moving-ground2 {
     animation: move infinite linear;
-    animation-duration: 4s;
-    animation-delay: 2s;
+    animation-duration: 6s;
+    animation-delay: 3s;
 }
 
 .moving-buildings {
     animation: move infinite linear;
-    animation-duration: 6s;
+    animation-duration: 8s;
 }
 
 .moving-buildings2 {
     animation: move infinite linear;
-    animation-duration: 6s;
-    animation-delay: 3s;
+    animation-duration: 8s;
+    animation-delay: 4s;
 }
 
 @keyframes move {

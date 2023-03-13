@@ -15,6 +15,22 @@ const movingBuildings = document.getElementById('buildings');
 const movingBuildings2 = document.getElementById('buildings2');
 const timer = document.getElementById('timer');
 const playerCurrentScore = document.getElementById('currentScore');
+const audio = new Audio('assets/star.wav');
+const bgm = new Audio('assets/bgm.mp3');
+const obstruction = [{
+    source: 'assets/obstruction1.png',
+    speed: 16
+}, {
+    source: 'assets/obstruction2.png',
+    speed: 18
+}, {
+    source: 'assets/obstruction3.png',
+    speed: 10
+}, {
+    source: 'assets/obstruction4.png',
+    speed: 12
+}]
+
 
 let hard = 0;
 easyBtn.addEventListener('click', function () {
@@ -35,15 +51,16 @@ let gravity = setInterval(function () {
     if (characterTop < 130) {
         character.style.top = (characterTop + 3) + "px";
     }
-}, 20);
+}, 25);
 
 function jump() {
     let characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top"));
-    if (characterTop >= 130) {
+    if (characterTop >= 70) { //return to 130
         character.style.top = (characterTop - 80) + "px";
 
     }
 }
+addEventListener("keyup", jump);
 
 let playerStarPoints = 0;
 function starMove() {
@@ -60,16 +77,28 @@ function starMove() {
 
 }
 
-function blockMove1() {
+let num = 0;
+function blockMove1(seconds) {
     if (gameOn == 1) {
-        let blockLeft1 = parseInt(window.getComputedStyle(block1).getPropertyValue('left'));
-        if (blockLeft1 <= -30) {
-            block1.style.left = "500px";
-        } else {
-            block1.style.left = (blockLeft1 - 3) + "px";
-        }
+        const interval = setInterval(() => {
+            let blockLeft1 = parseInt(window.getComputedStyle(block1).getPropertyValue('left'));
+            if (blockLeft1 <= -30) {
+                block1.style.left = "500px";
+                clearInterval(interval);
+                gameYes();
+                block1.src = obstruction[num].source;
+            } else {
+                block1.style.left = (blockLeft1 - 3) + "px";
+            }
+        }, seconds)
     }
 }
+function gameYes() {
+    num = Math.floor(Math.random() * 4);
+    blockMove1(obstruction[num].speed);
+}
+
+
 function blockMove2() {
     if (gameOn == 1) {
 
@@ -100,7 +129,7 @@ const checkHit = setInterval(function () {
         youLose();
     }
 
-}, 10);
+}, 15);
 
 const starPoints = setInterval(function () {
     let characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top")); // position of character
@@ -109,6 +138,7 @@ const starPoints = setInterval(function () {
         playerCurrentScore.innerHTML = `Score: ${playerStarPoints}`;
     }
     if (starLeft <= 70 && starLeft >= 0 && characterTop <= 70) {
+        audio.play();
         playerStarPoints++;
         if (hard == 1) {
             playerStarPoints++;
@@ -116,11 +146,12 @@ const starPoints = setInterval(function () {
         star.style.visibility = 'hidden';
     }
 
-}, 120);
+}, 100);
 
 let gameOn;
 
 function youLose() {
+    bgm.pause();
     const lose = document.querySelector('#youLose');
     lose.classList.remove('hidden');
     moonMove.classList.remove('moonAnimation');
@@ -142,21 +173,23 @@ playAgain.addEventListener('click', function () {
 
 
 startGame.addEventListener('click', function () {
-
+    bgm.play();
+    gameOn = 1;
     moonMove.classList.add('moonAnimation');
     movingGround.classList.add('moving-ground');
     movingGround2.classList.add('moving-ground2');
     movingBuildings.classList.add('moving-buildings');
     movingBuildings2.classList.add('moving-buildings2');
     startGame.classList.add('hidden');
-    gameOn = 1;
     if (hard == 1) {
         setInterval(blockMove2, 12);
     }
     setInterval(starMove, 18);
-    setInterval(blockMove1, 9);
+    blockMove1(12);
 
 });
+
+
 
 
 
