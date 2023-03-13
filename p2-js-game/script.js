@@ -115,7 +115,7 @@ const checkHit = setInterval(function () {
     let characterTop = parseInt(window.getComputedStyle(character).getPropertyValue('top')); // position of character
     let blockLeft = parseInt(window.getComputedStyle(block).getPropertyValue('left')); //position of block
     let blockLeft2 = parseInt(window.getComputedStyle(block2).getPropertyValue('left')); //position of block
-    if ((blockLeft < 50 || blockLeft2 < 50) && (blockLeft > 30 || blockLeft2 > 30) && characterTop >= 130) {
+    if ((blockLeft < 55 || blockLeft2 < 55) && (blockLeft > 30 || blockLeft2 > 30) && characterTop >= 120) {
         block.style.animation = 'none';
         block.style.display = 'none';
         block2.style.animation = 'none';
@@ -140,7 +140,7 @@ const starPoints = setInterval(function () {
         }
         star.style.visibility = 'hidden';
     }
-}, 390); //100
+}, 400);
 
 // function to end the game
 let gameOn;
