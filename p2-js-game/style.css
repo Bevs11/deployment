@@ -29,7 +29,6 @@ body {
 }
 
 @keyframes moonAnimate {
-
     0% {
         left: 0px;
     }
@@ -49,7 +48,6 @@ body {
     width: 50px;
     bottom: 20;
     left: 20px;
-
 }
 
 #block,
@@ -141,7 +139,6 @@ body {
     }
 }
 
-
 #currentScore {
     width: 80px;
     color: white;
@@ -163,7 +160,6 @@ body {
 .hidden {
     visibility: hidden;
 }
-
 
 .text {
     color: white;

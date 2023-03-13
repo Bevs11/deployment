@@ -135,9 +135,6 @@ const starPoints = setInterval(function () {
     if (starLeft <= 70 && starLeft >= -10 && characterTop <= 110) {
         audio.play();
         playerStarPoints++;
-        if (hard == 1) {
-            playerStarPoints++;
-        }
         star.style.visibility = 'hidden';
     }
 }, 400);
