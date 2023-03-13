@@ -1,7 +1,6 @@
 * {
     padding: 0;
     margin: 0;
-
 }
 
 body {
@@ -48,19 +47,15 @@ body {
 
 #character {
     width: 50px;
-    position: absolute;
     bottom: 20;
-
     left: 20px;
 
 }
-
 
 #block,
 #block2 {
     width: 40px;
     height: 40px;
-    position: absolute;
     bottom: 0;
     left: 500px;
 }
@@ -68,43 +63,52 @@ body {
 #star {
     width: 30px;
     height: 30px;
-    position: absolute;
     top: 80px;
     left: 500px;
 }
 
+/*Possition absolute for several elements*/
+#moon,
+#currentScore,
+#star,
+#block,
+#block2,
+#character,
+#ground,
+#moving-ground,
+#moving-ground2,
+#buildings,
+#buildings2 {
+    position: absolute;
+}
+
+/*Position of background assets*/
 #ground,
 #moving-ground {
-
-    position: absolute;
     width: 500px;
     left: 0;
     bottom: 0;
 }
 
 #moving-ground2 {
-
-    position: absolute;
     width: 500px;
     left: 500px;
     bottom: 0;
 }
 
 #buildings {
-    position: absolute;
     width: 500px;
     left: 0;
     bottom: 30px;
 }
 
 #buildings2 {
-    position: absolute;
     width: 500px;
     left: 500px;
     bottom: 30px;
 }
 
-
+/*the following are classes to be added after the game starts and will be removed once the game finishes*/
 .moving-ground {
     animation: move infinite linear;
     animation-duration: 6s;
@@ -140,7 +144,6 @@ body {
 
 #currentScore {
     width: 80px;
-    position: absolute;
     color: white;
     right: 50px;
     top: 5px;
@@ -179,7 +182,7 @@ body {
 }
 
 .inline-block {
-    display: inline-block
+    display: inline-block;
 }
 
 .difficulty-btn {
