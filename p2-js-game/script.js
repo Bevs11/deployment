@@ -132,7 +132,7 @@ const starPoints = setInterval(function () {
     if (gameOn == 1) {
         playerCurrentScore.innerHTML = `Score: ${playerStarPoints}`;
     }
-    if (starLeft <= 70 && starLeft >= 0 && characterTop <= 70) {
+    if (starLeft <= 70 && starLeft >= -10 && characterTop <= 110) {
         audio.play();
         playerStarPoints++;
         if (hard == 1) {
@@ -140,7 +140,7 @@ const starPoints = setInterval(function () {
         }
         star.style.visibility = 'hidden';
     }
-}, 100);
+}, 390); //100
 
 // function to end the game
 let gameOn;

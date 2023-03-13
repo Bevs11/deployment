@@ -17,7 +17,6 @@ body {
     /* to keep the objects to stay inside box */
 }
 
-
 #moon {
     z-index: -1;
     position: absolute;
@@ -46,6 +45,7 @@ body {
 }
 
 #character {
+    z-index: 1;
     width: 50px;
     bottom: 20;
     left: 20px;
