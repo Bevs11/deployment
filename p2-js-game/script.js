@@ -167,8 +167,8 @@ playAgain.addEventListener('click', function () {
 
 // To start the game
 startGame.addEventListener('click', function () {
-    bgm.play();
     gameOn = 1;
+    audioLoop();
     moonMove.classList.add('moonAnimation');
     movingGround.classList.add('moving-ground');
     movingGround2.classList.add('moving-ground2');
@@ -181,6 +181,19 @@ startGame.addEventListener('click', function () {
     setInterval(starMove, 18);
     blockMove1(12);
 });
+
+//loops background music
+function audioLoop() {
+    bgm.play();
+    const bgmLoop = setInterval(() => {
+        if (gameOn == 1) {
+            bgm.play();
+        } else {
+            bgm.pause();
+            clearInterval(bgmLoop);
+        }
+    }, 46000)
+}
 
 
 
