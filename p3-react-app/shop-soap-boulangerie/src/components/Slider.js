@@ -3,6 +3,8 @@ import ArrowLeftIcon from '@mui/icons-material/ArrowLeft';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 import { sliderItems } from "../data";
 
+import {useState} from 'react';
+
 const Container = styled.div`
 width: 100%;
 height: 100vh;
@@ -34,7 +36,8 @@ z-index: 2;
 const Wrapper = styled.div`
 height: 100%;
 display: flex;
-transform: translateX(0vw);
+transform: translateX(${props=>props.slideIndex*-100}vw);
+transition: all 1.5s ease;
 `;
 
 const Slide = styled.div`
@@ -77,46 +80,35 @@ cursor: pointer;
 
 const Slider = () => {
     const [slideIndex, setSlideIndex] = useState(0);
-    const handleClick = (direction) => {};
+    const handleClick = (direction) => {
+
+        if (direction==='left'){
+            setSlideIndex(slideIndex > 0 ? slideIndex-1 : 2);
+        } else {
+            setSlideIndex(slideIndex < 2 ? slideIndex+1 : 0);
+        }
+    };
   
     return (
     <Container>
         <Arrow direction='left' onClick={()=> handleClick('left')}>
             <ArrowLeftIcon />
         </Arrow>
-        <Wrapper>
-            <Slide num='1'>
+        <Wrapper slideIndex={slideIndex}>
+            {sliderItems.map((item) =>(
+            <Slide>
                 <ImgContainer>
-                    <Image src='https://i.pinimg.com/736x/46/f0/b6/46f0b66a8574f60868d0388d271bab4a.jpg'/>
+                    <Image src={item.img}/>
                 </ImgContainer>
                 <InfoContainer>
-                    <Title>SUMMER SALE</Title>
-                    <Desc>GET 30% OFF FOR SUMMER SOAP COLLECTION</Desc>
+                    <Title>{item.title}</Title>
+                    <Desc>{item.desc}</Desc>
                     <Button>SHOP NOW</Button>
                 </InfoContainer>
             </Slide>
-            <Slide num='2'>
-                <ImgContainer>
-                    <Image src='https://i.pinimg.com/originals/91/12/b1/9112b17a158c02e58741400c2e924d81.jpg'/>
-                </ImgContainer>
-                <InfoContainer>
-                    <Title>RAINY SEASON</Title>
-                    <Desc>GET 30% OFF FOR RAINY SEASON SOAP COLLECTION</Desc>
-                    <Button>SHOP NOW</Button>
-                </InfoContainer>
-            </Slide>
-            <Slide num='3'>
-                <ImgContainer>
-                    <Image src='https://chulaleague.org/wp-content/uploads/gravity_forms/41-94b1452192a94a48e77fa96a6a8e8f81/2019/08/soaps.jpg'/>
-                </ImgContainer>
-                <InfoContainer>
-                    <Title>NEW CUSTOMER DISCOUNT</Title>
-                    <Desc>GET 20% OFF FOR YOUR 1ST PURCHASE</Desc>
-                    <Button>SHOP NOW</Button>
-                </InfoContainer>
-            </Slide>
+            ))}
         </Wrapper>
-        <Arrow direction='right' onClick={()=> handleClick('left')}>
+        <Arrow direction='right' onClick={()=> handleClick('right')}>
             <ArrowRightIcon />
         </Arrow>
     </Container>
