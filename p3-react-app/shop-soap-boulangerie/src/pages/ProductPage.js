@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import AddIcon from '@mui/icons-material/Add';
+import RemoveIcon from '@mui/icons-material/Remove';
 
 
 const Container = styled.div``;
@@ -27,7 +29,29 @@ margin: 20px 0;
 const Price = styled.span`
 font-size: 40px;
 `;
-const FilterContainer = styled.div``;
+
+const AddContainer = styled.div`
+display: flex;
+align-items: center;
+justify-content: space-between;
+width: 50%;
+margin: 20px 0;
+`;
+const AmountContainer = styled.div`
+display: flex;
+align-items: center;
+font-weight: bold;
+`;
+const Amount = styled.span`
+width:30px;
+height: 30px;
+border-radius: 10px;
+border: 1px solid teal;
+display: flex;
+align-items: center;
+justify-content: center;
+`;
+const Button = styled.button``;
 
 
 const ProductPage = () => {
@@ -41,9 +65,14 @@ const ProductPage = () => {
                 <Title>Candy Cane Soap</Title>
                 <Desc>This candy cane soap smells as nice as it looks! Layers of pink and white glycerin soap come together with crushed candy canes for a cute and easy gift idea this holiday season.</Desc>
                 <Price>P 45.00 / pc</Price>
-                <FilterContainer>
-
-                </FilterContainer>
+                <AddContainer>
+                    <AmountContainer>
+                        <RemoveIcon/>
+                        <Amount>1</Amount>
+                        <AddIcon />
+                    </AmountContainer>
+                    <Button>ADD TO CART</Button>
+                </AddContainer>
             </InfoContainer>
         </Wapper>
     </Container>
