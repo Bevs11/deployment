@@ -50,8 +50,18 @@ border: 1px solid teal;
 display: flex;
 align-items: center;
 justify-content: center;
+margin: 0 5px;
 `;
-const Button = styled.button``;
+const Button = styled.button`
+padding: 15px;
+border-radius: 10px;
+font-weight: bold;
+cursor: pointer;
+
+&:hover{
+    background-color: pink;
+}
+`;
 
 
 const ProductPage = () => {
