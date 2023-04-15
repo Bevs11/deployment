@@ -8,6 +8,7 @@ import { Route, Routes } from 'react-router-dom';
 import styled from 'styled-components';
 import ProductList from './pages/ProductList';
 import CheckoutPage from './pages/CheckoutPage';
+import ProductPage from './pages/ProductPage';
 
 
 const Container = styled.div``;
@@ -20,6 +21,7 @@ return (
     <Container>
       <Routes>
         <Route path='/' element={ <Home/>} />
+        <Route path='/productpage' element={ <ProductPage/>} />
         <Route path='/products' element={ <ProductList/>} />
         <Route path='/cart' element={ <CheckoutPage />} />
      

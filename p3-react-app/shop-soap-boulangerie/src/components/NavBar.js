@@ -4,7 +4,8 @@ import image from '../assets/pink-soap.png'
 
 const Container = styled.div`
     height: 60px;
-    margin: 20px 0;;
+    margin: 20px 0;
+    background-color: rgb(250,230,230);
 `
 const Wrapper = styled.div`
     padding: 10px 20px;
@@ -59,6 +60,9 @@ const NavBar = () => {
             <Right>
                 <NavigationItem>
                     <Link to='/'>Home</Link>
+                </NavigationItem>
+                <NavigationItem>
+                    <Link to='/productpage'>Product Page</Link>
                 </NavigationItem>
                 <NavigationItem>
                     <Link to='/products'>Products</Link>
