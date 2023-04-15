@@ -1,15 +1,16 @@
-import React from 'react'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
+import image from '../assets/pink-soap.png'
 
 const Container = styled.div`
     height: 60px;
+    margin: 20px 0;;
 `
 const Wrapper = styled.div`
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;
 `
-
 const Left = styled.div`
 flex: 1;
 `
@@ -26,23 +27,45 @@ justify-content: flex-end;
 padding-right: 25px; 
 flex: 1;
 `
-
 const NavigationItem = styled.div`
 cursor: pointer;
 font-size: 14px;
 margin-left: 25px
 `
 
+const LogoContainer = styled.div`
+width: 50px;
+height: 50px;
+border-radius 50%;
+background-color: yellow;
+`;
+const Logo = styled.img`
+width: 90%;
+height: 90%;
+`;
+
+
+
 const NavBar = () => {
   return (
-    <Container>NavBar
+    <Container>
         <Wrapper>
-            <Left>Logo</Left>
+            <Left>
+                <LogoContainer>
+                    <Logo src={image}/>
+                </LogoContainer>
+            </Left>
             <Center>SOAP BOULANGERIE</Center>
             <Right>
-                <NavigationItem>Home</NavigationItem>
-                <NavigationItem>Products</NavigationItem>
-                <NavigationItem>Cart/Checkout</NavigationItem>
+                <NavigationItem>
+                    <Link to='/'>Home</Link>
+                </NavigationItem>
+                <NavigationItem>
+                    <Link to='/products'>Products</Link>
+                </NavigationItem>
+                <NavigationItem>
+                    <Link to='/cart'>Cart/Checkout</Link>
+                </NavigationItem>
             </Right>
         </Wrapper>
 
