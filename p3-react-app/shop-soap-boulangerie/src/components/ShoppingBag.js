@@ -54,11 +54,13 @@ margin: 20px 0;
 
 /*End of Styling */
 
-const ShoppingBag = (props) => {
-    const {cartItem, addToCart, removeFromCart} = useContext(ShopContext);
+const ShoppingBag = (props, data) => {
+    const {cartItems, addToCart, removeFromCart} = useContext(ShopContext);
 
     const [itemNumber, setItemNumber] = useState(1);
     const [partialTotal, setPartialTotal] = useState(45 * itemNumber);
+
+    
 
     const itemAdd = (event) => {
         setItemNumber(itemNumber + 1);
@@ -74,7 +76,7 @@ const ShoppingBag = (props) => {
         setPartialTotal(Number(props.price)*itemNumber);
     }, [itemNumber]);
 
-
+    
     return (
     <Container>
                 <Info>
@@ -91,10 +93,10 @@ const ShoppingBag = (props) => {
                             <ProductAmountContainer>
                                 <button onClick={itemSubtract}>
                                     <RemoveIcon/>
-                                    </button>
+                                </button>
                                 <ProductAmount>{itemNumber}</ProductAmount>
                                 <button onClick={itemAdd}>
-                                <AddIcon/>
+                                    <AddIcon/>
                                 </button>
                             </ProductAmountContainer>
                             <ProductPrice>PerPiece: P {props.price}.00</ProductPrice>

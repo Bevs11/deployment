@@ -4,7 +4,7 @@ import ShoppingBag from "../components/ShoppingBag";
 import OrderSummary from "../components/OrderSummary";
 import { ShopContext } from "../context/ShopContextProvider";
 import { popularProducts } from "../data";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 
 
 const Container = styled.div``;
@@ -16,13 +16,12 @@ margin: 30px 30px;
 `;
 
 
-
-
-
-
 const CheckoutPage = () => {
-  const {cartItem, addToCart, removeFromCart} = useContext(ShopContext);
+  const [data, setData] = useState({});
+  const {cartItems, addToCart, removeFromCart} = useContext(ShopContext);
   
+
+/* Cart Items in if statement is undefined*/
   return (
     
     <Container>
@@ -30,13 +29,18 @@ const CheckoutPage = () => {
 
             <Title>CART</Title>
 
+
+
             <div>
-              {popularProducts.map((product)=> 
-                  <ShoppingBag name={product.name}
+              {popularProducts.map((product)=> { 
+                if (cartItems[product.id] !== 0) {
+                  return <ShoppingBag name={product.name}
                   img={product.img}
                   price={product.price}
                   id={product.id}
-                  />
+                  />         
+                }
+              }
                 
                )}
             </div>
