@@ -16,14 +16,13 @@ display: flex;
 align-items: center;
 justify-content: space-between;
 `;
-
 const TopButton = styled.button`
 padding: 10px;
 font-weight: bold;
 cursor: pointer;
 margin-left: 30px;
+margin: 20px 0;
 `;
-
 const TopText = styled.div``;
 const Bottom = styled.div``;
 const Info = styled.div``;
@@ -66,11 +65,9 @@ const ProductPrice = styled.div`
 font-size: 30px;
 
 `;
-
 const Hr = styled.hr`
 margin: 20px 0;
 `;
-
 const Summary = styled.div`
 flex: 1;
 border: 0.5px solid lightgrey;
@@ -78,31 +75,17 @@ border-radius: 10px;
 padding: 10px;
 margin-top: 20px;
 `;
-
-
 const SummaryTitle = styled.h1``;
 const SummaryItem = styled.div`
 margin: 20px 0;
-font-weight: &{props => props.type === 'total' && 'bold'}; 
-font-size: &{props => props.type === 'total' && '24px'};
+font-weight: ${props => props.type === 'total' && 'bold'}; 
+font-size: ${props => props.type === 'total' && '24px'};
 `;
-/*Check why this is not working */
-
 const SummaryItemText = styled.span`
 margin-right: 10px;
 `;
 const SummaryItemPrice = styled.span``;
-const SummaryButton = styled.button`
-width: 300px;
-padding: 10px;
-font-size: 20px;
-font-weight: bold;
-cursor: pointer;
 
-&:hover {
-    background-color: pink;
-}
-`;
 
 
 const CheckoutPage = () => {
@@ -176,7 +159,7 @@ const CheckoutPage = () => {
                         <SummaryItemText>Total</SummaryItemText>
                         <SummaryItemPrice>P 120.00</SummaryItemPrice>
                     </SummaryItem>
-                    <SummaryButton>CHECK OUT NOW</SummaryButton>
+                  
 
 
                 </Summary>
