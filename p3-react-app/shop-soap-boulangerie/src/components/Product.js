@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import SearchIcon from '@mui/icons-material/Search';
 
 const Info = styled.div`
@@ -72,9 +71,6 @@ const Product = ({item}) => {
       <Info>
         <Icon>
           <ShoppingCartIcon/>
-        </Icon>
-        <Icon>
-          <FavoriteBorderIcon/>
         </Icon>
         <Icon>
           <SearchIcon/>

@@ -1,8 +1,11 @@
 import styled from "styled-components";
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
+import { useState, useContext } from "react";
+import { ShopContext } from "../context/ShopContextProvider";
+import { popularProducts } from "../data";
 
-
+/*Styling */
 const Container = styled.div``;
 const Wapper = styled.div`
 padding: 50px;
@@ -62,26 +65,44 @@ cursor: pointer;
     background-color: pink;
 }
 `;
-
+/*End of Styling */
 
 const ProductPage = () => {
-  return (
+    let id = 1;
+    
+    const [itemNumber, setItemNumber] = useState(1);
+    const itemAdd = (event) => {
+        setItemNumber(itemNumber + 1);
+    }
+    const itemSubtract = (event) => {
+        if(itemNumber > 0) {
+            setItemNumber(itemNumber - 1);
+        } 
+    }
+
+    const {addToCart} = useContext(ShopContext);
+  
+    return (
     <Container>
         <Wapper>
             <ImgContainer>
-                <Image src='https://i1.wp.com/4.bp.blogspot.com/-rddGM2f90BU/Tt5OCvKBpZI/AAAAAAAAIY4/fzQPcX3sznk/s1600/IMG_5483.JPG'/>
+                <Image src={popularProducts[id].img}/>
             </ImgContainer>
             <InfoContainer>
-                <Title>Candy Cane Soap</Title>
-                <Desc>This candy cane soap smells as nice as it looks! Layers of pink and white glycerin soap come together with crushed candy canes for a cute and easy gift idea this holiday season.</Desc>
-                <Price>P 45.00 / pc</Price>
+                <Title>{popularProducts[id].name}</Title>
+                <Desc>{popularProducts[id].description}</Desc>
+                <Price>P {popularProducts[id].price}.00 / pc</Price>
                 <AddContainer>
                     <AmountContainer>
-                        <RemoveIcon/>
-                        <Amount>1</Amount>
-                        <AddIcon />
+                        <button onClick={itemSubtract}>
+                            <RemoveIcon/>
+                        </button>
+                        <Amount>{itemNumber}</Amount>
+                        <button onClick={itemAdd}>
+                            <AddIcon />
+                        </button>
                     </AmountContainer>
-                    <Button>ADD TO CART</Button>
+                    <Button onClick={() => addToCart(1)}>ADD TO CART</Button>
                 </AddContainer>
             </InfoContainer>
         </Wapper>
