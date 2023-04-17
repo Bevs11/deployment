@@ -1,4 +1,4 @@
-import { useReducer } from "react";
+import { useReducer, useState, useEffect } from "react";
 import styled from "styled-components"
 
 /* Styling*/
@@ -49,6 +49,11 @@ margin-top: 20px;
     background-color: pink;
 }
 `;
+const ErrorMessage = styled.small`
+margin-top: 20px;
+font-weight: bold;
+color: red;
+`;
 /*Styling End*/
 
 let userInfo = {};
@@ -65,21 +70,46 @@ function reducer(state, action) {
   return {...state, [action.input] : action.value};
 }
 
-function isValid(state) {
-if(state.name) return true;
-}
+
+
 
 
 const Checkout = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
-
+  const regexNumber = /\d/;
+  const regexLetters = /[A-Za-z]/;
+  const regexSpecialCharacter = /[-!$%^&*()_+|~=`{}\[\]:";'<>?,.\/]/;
   // console.log(state);
+  // input validation
+
+  const [errorMessage, setErrorMessage] = useState('Please fill out all fields')
+
+  function isValid(userInput) {
+    if(userInput.firstname !== '' && userInput.lastname !== '' && userInput.email !== '' && userInput.contact !== '' && userInput.address !== '') {
+      if(!regexNumber.test(userInput.firstname) && !regexNumber.test(userInput.firstname) && userInput.firstname.length > 3 && userInput.lastname.length > 3 && !regexLetters.test(userInput.contact) && !regexSpecialCharacter.test(userInput.firstname) && !regexSpecialCharacter.test(userInput.lasttname)){
+        setErrorMessage('');
+        return true;
+      } else {
+        setErrorMessage('Please provide valid first name, last name and contact number. First name and Last name must not have any numbers or special characters. ');
+        return false;
+      }
+    }else {
+      setErrorMessage('Please fill out all fields');
+      return false;
+    }
+  };
+
+  useEffect(()=> {
+    isValid(state);
+  }, [state])
 
   function handleClick(e) {
     e.preventDefault();
-    alert(`Hey ${state.firstname.toUpperCase()} ${state.lastname.toUpperCase()}, your order has been send. Please check your email for your Confirmation Number. Thank you for shopping! `);
-    userInfo = state;
-    console.log(userInfo);
+    if (isValid(state)){
+      alert(`Hey ${state.firstname.toUpperCase()} ${state.lastname.toUpperCase()}, your order has been send. Please check your email for your Confirmation Number. Thank you for shopping! `);
+      userInfo = state;
+      console.log(userInfo);
+    }
   }
 
   function onChange(e) {
@@ -100,31 +130,37 @@ const Checkout = () => {
             type='text'
             name='firstname'
             placeholder='first name'
-            onChange={onChange}/>
+            onChange={onChange}
+            required/>
             <Label>Last Name:</Label>
             <Input 
             type='text'
             name='lastname'
             placeholder='last name'
-            onChange={onChange}/>
+            onChange={onChange}
+            required/>
             <Label>Email:</Label>
             <Input 
             type='text'
             name='email'
             placeholder='email'
-            onChange={onChange}/>
+            onChange={onChange}
+            required/>
             <Label>Contact Number:</Label>
             <Input 
             type='text'
             name='contact'
             placeholder='contact number'
-            onChange={onChange}/>
+            onChange={onChange}
+            required/>
             <Label>Home Address:</Label>
             <Input 
             type='text'
             name='address'
             placeholder='address'
-            onChange={onChange}/>
+            onChange={onChange}
+            required/>
+            <ErrorMessage>{errorMessage}</ErrorMessage>
             <Button onClick={handleClick}>ORDER</Button>
             
         </Form>
