@@ -21,7 +21,7 @@ const CheckoutPage = () => {
   const {cartItems, addToCart, removeFromCart} = useContext(ShopContext);
   
 
-/* Cart Items in if statement is undefined*/
+
   return (
     
     <Container>

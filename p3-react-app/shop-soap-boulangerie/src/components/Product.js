@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import SearchIcon from '@mui/icons-material/Search';
+import { useContext, useState } from "react";
+import { ShopContext } from "../context/ShopContextProvider";
 
 const Info = styled.div`
 opacity:0;
@@ -46,7 +48,7 @@ height: 75%;
 z-index: 2;
 `;
 
-const Icon = styled.div`
+const Button = styled.button`
 width: 40px;
 height: 40px;
 border-radius: 50%;
@@ -64,20 +66,29 @@ transition: all 0.5s ease;
 `;
 
 const Product = ({item}) => {
+  const [viewId, setViewId] = useState(1);
+  
+  const { addToCart} = useContext(ShopContext);
+  const itemChosen = () => {
+    setViewId(item.id);
+    console.log(viewId);
+  }
+
   return (
     <Container>
       <Circle />
       <Image src={item.img}/>
       <Info>
-        <Icon>
-          <ShoppingCartIcon/>
-        </Icon>
-        <Icon>
+        <Button onClick={() => {addToCart(item.id)}}>
+          <ShoppingCartIcon/>                 
+        </Button>
+        <Button onClick={itemChosen}>
           <SearchIcon/>
-        </Icon>
+        </Button>
       </Info>
     </Container>
   )
 }
+
 
 export default Product

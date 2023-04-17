@@ -73,41 +73,41 @@ const ShoppingBag = (props, data) => {
         } 
     }
     useEffect(() => {
-        setPartialTotal(Number(props.price)*itemNumber);
-    }, [itemNumber]);
+        setPartialTotal(cartItems[props.id]*props.price);
+    }, [removeFromCart, addToCart]);
 
     
     return (
     <Container>
-                <Info>
-                    <Product>
-                        <ProductDetail>
-                            <Image src={props.img} />
-                            <Details>
-                                <ProductName><b>Product:</b>{props.name}</ProductName>
-                                <ProductId><b>ID:</b>00{props.id}</ProductId>
+        <Info>
+            <Product>
+                <ProductDetail>
+                    <Image src={props.img} />
+                    <Details>
+                        <ProductName><b>Product:</b>{props.name}</ProductName>
+                        <ProductId><b>ID:</b>00{props.id}</ProductId>
 
-                            </Details>
-                        </ProductDetail>
-                        <PriceDetail>
-                            <ProductAmountContainer>
-                                <button onClick={itemSubtract}>
-                                    <RemoveIcon/>
-                                </button>
-                                <ProductAmount>{itemNumber}</ProductAmount>
-                                <button onClick={itemAdd}>
-                                    <AddIcon/>
-                                </button>
-                            </ProductAmountContainer>
-                            <ProductPrice>PerPiece: P {props.price}.00</ProductPrice>
-                            <ProductPrice>Total: P {partialTotal}.00</ProductPrice>
-                        </PriceDetail>
-                    </Product>
-                    <Hr/>
-                </Info>
+                    </Details>
+                </ProductDetail>
+                <PriceDetail>
+                    <ProductAmountContainer>
+                        <button onClick={() => removeFromCart(props.id)}>
+                            <RemoveIcon/>
+                        </button>
+                        <ProductAmount>{cartItems[props.id]}</ProductAmount>
+                        <button onClick={() => addToCart(props.id)}>
+                            <AddIcon/>
+                        </button>
+                    </ProductAmountContainer>
+                    <ProductPrice>PerPiece: P {props.price}.00</ProductPrice>
+                    <ProductPrice>Total: P {partialTotal}.00</ProductPrice>
+                </PriceDetail>
+            </Product>
+            <Hr/>
+        </Info>          
                 
 
-            </Container>
+    </Container>
   )
 }
 

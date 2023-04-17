@@ -1,5 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useState, useEffect, useContext } from "react";
+import { ShopContext } from "../context/ShopContextProvider";
+import { popularProducts } from '../data';
 
 
 const Container = styled.div`
@@ -24,25 +27,61 @@ margin-right: 10px;
 const SummaryItemPrice = styled.span``;
 
 const OrderSummary = () => {
+    const [subTotal, setSubTotal] = useState(0);
+    const [shipping, setShipping] = useState(0);
+    const [discount, setDiscount] = useState(0);
+    const [grandTotal, setGrandTotal] = useState(0);
+    const {cartItems, addToCart, removeFromCart} = useContext(ShopContext);
+    const computeSubTotal = () => {
+        let totalCost = 0;
+        for(let i = 0; i < popularProducts.length ; i++) {
+            
+            if(cartItems[i+1] !== 0){
+                totalCost += cartItems[i+1] * popularProducts[i].price;
+            }
+        }
+        return totalCost;
+    }
+    
+    useEffect(()=> {
+        setSubTotal(computeSubTotal());
+    }, [cartItems])
+
+    useEffect(()=> {
+        isEmpty();
+        setGrandTotal(subTotal + shipping - discount);
+    }, [subTotal, shipping, discount])
+
+    function isEmpty() {
+        if(subTotal !== 0) {
+            setDiscount(30);
+            setShipping(60);
+        } else {
+            setDiscount(0);
+            setShipping(0);
+        }
+    }
+
   return (
+
     <Container>
        <Summary>
                     <SummaryTitle>ORDER SUMMARY</SummaryTitle>
                     <SummaryItem>
                         <SummaryItemText>Sub Total</SummaryItemText>
-                        <SummaryItemPrice>P 90.00</SummaryItemPrice>
+                        <SummaryItemPrice>P {subTotal}.00</SummaryItemPrice>
                     </SummaryItem>
                     <SummaryItem>
                         <SummaryItemText>Estimated Shipping</SummaryItemText>
-                        <SummaryItemPrice>P 60.00</SummaryItemPrice>
+                        <SummaryItemPrice>P {shipping}.00</SummaryItemPrice>
                     </SummaryItem>
                     <SummaryItem>
                         <SummaryItemText>Discount</SummaryItemText>
-                        <SummaryItemPrice>P 30.00</SummaryItemPrice>
+                        <SummaryItemPrice>P {discount}.00</SummaryItemPrice>
                     </SummaryItem>
                     <SummaryItem type='total'>
                         <SummaryItemText>Total</SummaryItemText>
-                        <SummaryItemPrice>P 120.00</SummaryItemPrice>
+                        <SummaryItemPrice>P {grandTotal}.00</SummaryItemPrice>
                     </SummaryItem>
                   
 

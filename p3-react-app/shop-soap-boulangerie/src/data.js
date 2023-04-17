@@ -61,7 +61,7 @@ export const popularProducts = [
     },
     {
         id: 3,
-        img: 'https://chulaleague.org/wp-content/uploads/gravity_forms/41-94b1452192a94a48e77fa96a6a8e8f81/2019/08/soaps.jpg',
+        img: 'https://5.imimg.com/data5/EI/XQ/HH/SELLER-2626525/lavender-handmade-bath-soap-1000x1000.jpg',
         name: 'Lavender and Rosemary Soap',
         description: 'Made with natural aloe vera and chamomile extracts, this soap helps soothe and calm irritated skin while leaving it feeling soft and refreshed.',
         price: 44
@@ -69,7 +69,7 @@ export const popularProducts = [
     },
     {
         id: 4,
-        img: 'https://i.pinimg.com/736x/46/f0/b6/46f0b66a8574f60868d0388d271bab4a.jpg',
+        img: 'https://www.getitrightdiy.com/wp-content/uploads/2019/10/diy_cold_process_soap_03a.jpg',
         name: 'Tea Tree Oil Soap ',
         description: 'Made with natural aloe vera and chamomile extracts, this soap helps soothe and calm irritated skin while leaving it feeling soft and refreshed.',
         price: 46
@@ -77,7 +77,7 @@ export const popularProducts = [
     },
     {
         id: 5,
-        img: 'https://i.pinimg.com/originals/91/12/b1/9112b17a158c02e58741400c2e924d81.jpg',
+        img: 'https://prorestorers.co.uk/wp-content/uploads/2019/07/Goat-skin-goats-milk-soap.jpg',
         name: 'Coconut Oil Soap',
         description: 'Made with natural aloe vera and chamomile extracts, this soap helps soothe and calm irritated skin while leaving it feeling soft and refreshed.',
         price: 47
@@ -85,7 +85,7 @@ export const popularProducts = [
     },
     {
         id: 6,
-        img: 'https://chulaleague.org/wp-content/uploads/gravity_forms/41-94b1452192a94a48e77fa96a6a8e8f81/2019/08/soaps.jpg',
+        img: 'https://eastwoodtulsa.org/wp-content/uploads/2018/11/Lemon-Soap-Bars.jpeg',
         name: 'Lemon and Mint Soap',
         description: 'Made with natural aloe vera and chamomile extracts, this soap helps soothe and calm irritated skin while leaving it feeling soft and refreshed.',
         price: 41
@@ -93,7 +93,7 @@ export const popularProducts = [
     },
     {
         id: 7,
-        img: 'https://i.pinimg.com/736x/46/f0/b6/46f0b66a8574f60868d0388d271bab4a.jpg',
+        img: 'https://th.bing.com/th/id/OIP.pFedfbuSffKDF2TwXJQWKgAAAA?pid=ImgDet&w=340&h=270&rs=1',
         name: 'Charcoal Soap ',
         description: 'Made with natural aloe vera and chamomile extracts, this soap helps soothe and calm irritated skin while leaving it feeling soft and refreshed.',
         price: 40
@@ -101,7 +101,7 @@ export const popularProducts = [
     },
     {
         id: 8,
-        img: 'https://i.pinimg.com/originals/91/12/b1/9112b17a158c02e58741400c2e924d81.jpg',
+        img: 'https://th.bing.com/th/id/R.4b0e93c1ba6e86fe5f4a931e239b9498?rik=lPvxXIzc1jBRAA&riu=http%3a%2f%2f4.bp.blogspot.com%2f_QhECGKGU2Dc%2fTOmT_l8ApbI%2fAAAAAAAADnA%2fGScMnV99AA4%2fs1600%2fDSCF1692.JPG&ehk=ZD6IlFHMmVQ2bCUieJbDHsQscIJLqZ0YoNy40eAg8M0%3d&risl=&pid=ImgRaw&r=0',
         name: 'Shea Butter Soap',
         description: 'Made with natural aloe vera and chamomile extracts, this soap helps soothe and calm irritated skin while leaving it feeling soft and refreshed.',
         price: 48
@@ -109,7 +109,7 @@ export const popularProducts = [
     },
     {
         id: 9,
-        img: 'https://chulaleague.org/wp-content/uploads/gravity_forms/41-94b1452192a94a48e77fa96a6a8e8f81/2019/08/soaps.jpg',
+        img: 'https://www.tailoredtouches.com/uploads/2/6/7/2/26723120/s299350024630528122_p311_i5_w2560.jpeg',
         name: 'Cinnamon and Clove Soap',
         description: 'Made with natural aloe vera and chamomile extracts, this soap helps soothe and calm irritated skin while leaving it feeling soft and refreshed.',
         price: 50
@@ -117,7 +117,7 @@ export const popularProducts = [
     },
     {
         id: 10,
-        img: 'https://chulaleague.org/wp-content/uploads/gravity_forms/41-94b1452192a94a48e77fa96a6a8e8f81/2019/08/soaps.jpg',
+        img: 'https://infusionsblog.files.wordpress.com/2012/09/greenteayogurt.jpg',
         name: 'Green Tea Soap',
         description: 'Made with natural aloe vera and chamomile extracts, this soap helps soothe and calm irritated skin while leaving it feeling soft and refreshed.',
         price: 51

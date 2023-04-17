@@ -59,10 +59,10 @@ const NavBar = () => {
             <Center>SOAP BOULANGERIE</Center>
             <Right>
                 <NavigationItem>
-                    <Link to='/'>Home</Link>
+                    <Link to='/productpage'>Product Page</Link>
                 </NavigationItem>
                 <NavigationItem>
-                    <Link to='/productpage'>Product Page</Link>
+                    <Link to='/'>Home</Link>
                 </NavigationItem>
                 <NavigationItem>
                     <Link to='/products'>Products</Link>
