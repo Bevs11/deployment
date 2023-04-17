@@ -4,6 +4,7 @@ import RemoveIcon from '@mui/icons-material/Remove';
 import { useState, useContext } from "react";
 import { ShopContext } from "../context/ShopContextProvider";
 import { popularProducts } from "../data";
+import { Link } from 'react-router-dom'
 
 /*Styling */
 const Container = styled.div``;
@@ -80,29 +81,32 @@ const ProductPage = () => {
         } 
     }
 
-    const {addToCart} = useContext(ShopContext);
+    const {addToCart, removeFromCart, viewingId, cartItems} = useContext(ShopContext);
+
   
     return (
     <Container>
         <Wapper>
             <ImgContainer>
-                <Image src={popularProducts[id].img}/>
+                <Image src={popularProducts[viewingId].img}/>
             </ImgContainer>
             <InfoContainer>
-                <Title>{popularProducts[id].name}</Title>
-                <Desc>{popularProducts[id].description}</Desc>
-                <Price>P {popularProducts[id].price}.00 / pc</Price>
+                <Title>{popularProducts[viewingId].name}</Title>
+                <Desc>{popularProducts[viewingId].description}</Desc>
+                <Price>P {popularProducts[viewingId].price}.00 / pc</Price>
                 <AddContainer>
                     <AmountContainer>
-                        <button onClick={itemSubtract}>
+                        <button onClick={() => removeFromCart(viewingId)}>
                             <RemoveIcon/>
                         </button>
-                        <Amount>{itemNumber}</Amount>
-                        <button onClick={itemAdd}>
+                        <Amount>{cartItems[viewingId]}</Amount>
+                        <button onClick={() => addToCart(viewingId)}>
                             <AddIcon />
                         </button>
                     </AmountContainer>
-                    <Button onClick={() => addToCart(1)}>ADD TO CART</Button>
+                    <Button>
+                        <Link to='/cart'>ADD TO CART</Link>
+                    </Button>
                 </AddContainer>
             </InfoContainer>
         </Wapper>

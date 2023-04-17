@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import image from '../assets/pink-soap.png'
 
 const Container = styled.div`
-    height: 60px;
+
     margin: 20px 0;
     background-color: rgb(250,230,230);
 `
@@ -35,10 +35,13 @@ margin-left: 25px
 `
 
 const LogoContainer = styled.div`
-width: 50px;
-height: 50px;
+width: 60px;
+height: 100%;
 border-radius 50%;
 background-color: yellow;
+display: flex;
+justify-content: center;
+align-items: center;
 `;
 const Logo = styled.img`
 width: 90%;

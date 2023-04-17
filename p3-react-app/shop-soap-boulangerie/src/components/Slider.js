@@ -2,6 +2,7 @@ import styled from "styled-components"
 import ArrowLeftIcon from '@mui/icons-material/ArrowLeft';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 import { sliderItems } from "../data";
+import { Link } from 'react-router-dom'
 
 import {useState} from 'react';
 
@@ -103,7 +104,9 @@ const Slider = () => {
                 <InfoContainer>
                     <Title>{item.title}</Title>
                     <Desc>{item.desc}</Desc>
-                    <Button>SHOP NOW</Button>
+                    <Button>
+                        <Link to='/products'>SHOP NOW</Link>   
+                    </Button>
                 </InfoContainer>
             </Slide>
             ))}

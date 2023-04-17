@@ -3,6 +3,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import SearchIcon from '@mui/icons-material/Search';
 import { useContext, useState } from "react";
 import { ShopContext } from "../context/ShopContextProvider";
+import { Link } from 'react-router-dom'
 
 const Info = styled.div`
 opacity:0;
@@ -30,6 +31,7 @@ align-items: center;
 justify-content:center;
 background-color: #f5fbfd;
 position: relative;
+flex-direction: column;
 
 &:hover ${Info} {
   opacity:1;
@@ -64,26 +66,33 @@ transition: all 0.5s ease;
   transform: scale(1.1);
 }
 `;
+const Title = styled.h3`
+margin-bottom: 10px;
+`;
 
 const Product = ({item}) => {
-  const [viewId, setViewId] = useState(1);
   
-  const { addToCart} = useContext(ShopContext);
-  const itemChosen = () => {
-    setViewId(item.id);
-    console.log(viewId);
-  }
+  
+  const { addToCart, settingId} = useContext(ShopContext);
+  // const itemChosen = () => {
+  //   setViewId(item.id);
+  //   console.log(viewId);
+  // }
+/*Not working yet */
 
   return (
     <Container>
       <Circle />
+      <Title>{item.name}</Title>
       <Image src={item.img}/>
       <Info>
         <Button onClick={() => {addToCart(item.id)}}>
           <ShoppingCartIcon/>                 
         </Button>
-        <Button onClick={itemChosen}>
+        <Button onClick={() => {settingId(item.id)}}>
+          <Link to='/productpage'>
           <SearchIcon/>
+        </Link>
         </Button>
       </Info>
     </Container>
