@@ -26,7 +26,7 @@ const ShopContextProvider = (props) => {
   }
 
   const settingId = (id) => {
-      setViewingId(id);
+      setViewingId(id-1);
       console.log(viewingId);
 
   }

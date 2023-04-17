@@ -96,11 +96,11 @@ const ProductPage = () => {
                 <Price>P {popularProducts[viewingId].price}.00 / pc</Price>
                 <AddContainer>
                     <AmountContainer>
-                        <button onClick={() => removeFromCart(viewingId)}>
+                        <button onClick={() => removeFromCart(viewingId+1)}>
                             <RemoveIcon/>
                         </button>
-                        <Amount>{cartItems[viewingId]}</Amount>
-                        <button onClick={() => addToCart(viewingId)}>
+                        <Amount>{cartItems[viewingId+1]}</Amount>
+                        <button onClick={() => addToCart(viewingId+1)}>
                             <AddIcon />
                         </button>
                     </AmountContainer>
