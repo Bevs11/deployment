@@ -32,7 +32,8 @@ const NavigationItem = styled.div`
 cursor: pointer;
 font-size: 14px;
 margin-left: 25px
-`
+
+`;
 
 const LogoContainer = styled.div`
 width: 60px;
@@ -49,6 +50,11 @@ height: 90%;
 `;
 
 
+/*  
+<NavigationItem >
+    <Link to='/productpage'>Product Page</Link>
+ </NavigationItem> 
+*/
 
 const NavBar = () => {
   return (
@@ -61,9 +67,6 @@ const NavBar = () => {
             </Left>
             <Center>SOAP BOULANGERIE</Center>
             <Right>
-                <NavigationItem>
-                    <Link to='/productpage'>Product Page</Link>
-                </NavigationItem>
                 <NavigationItem>
                     <Link to='/'>Home</Link>
                 </NavigationItem>

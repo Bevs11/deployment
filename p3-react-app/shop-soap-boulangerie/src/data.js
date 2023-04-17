@@ -3,19 +3,19 @@ export const sliderItems = [
         id: 1,
         img: 'https://i.pinimg.com/736x/46/f0/b6/46f0b66a8574f60868d0388d271bab4a.jpg',
         title: 'SUMMER SALE',
-        desc:'GET 30% OFF FOR SUMMER SOAP COLLECTION'
+        desc:'GET 30% OFF ON ALL OUR PRODUCTS THIS SUMMER SEASON'
     },
     {
         id: 2,
         img: 'https://i.pinimg.com/originals/91/12/b1/9112b17a158c02e58741400c2e924d81.jpg',
         title: 'RAINY SEASON SALE',
-        desc:'GET 30% OFF FOR RAINY SEASON SOAP COLLECTION'
+        desc:'GET 30% OFF ON SELECTED PRODUCTS THIS RAINY SEASON'
     },
     {
         id: 3,
         img: 'https://chulaleague.org/wp-content/uploads/gravity_forms/41-94b1452192a94a48e77fa96a6a8e8f81/2019/08/soaps.jpg',
         title: 'NEW CUSTOMER DISCOUNT',
-        desc:'GET 20% OFF FOR YOUR 1ST PURCHASE'
+        desc:'GET 20% OFF YOUR 1ST PURCHASE'
     },
 
 ]
@@ -24,20 +24,18 @@ export const categories = [
     {
         id: 1,
         img: 'https://i.pinimg.com/736x/46/f0/b6/46f0b66a8574f60868d0388d271bab4a.jpg',
-        title: 'SUMMER COLLECTION',
-        desc:'GET 30% OFF FOR SUMMER SOAP COLLECTION'
+        title: 'FACIAL SOAPS'
+        
     },
     {
         id: 2,
         img: 'https://i.pinimg.com/originals/91/12/b1/9112b17a158c02e58741400c2e924d81.jpg',
-        title: 'RAINY SEASON COLLECTION',
-        desc:'GET 30% OFF FOR RAINY SEASON SOAP COLLECTION'
+        title: 'FRAGRANT SOAPS'
     },
     {
         id: 3,
         img: 'https://chulaleague.org/wp-content/uploads/gravity_forms/41-94b1452192a94a48e77fa96a6a8e8f81/2019/08/soaps.jpg',
-        title: 'ASSORTED SOAPS',
-        desc:'GET 20% OFF FOR YOUR 1ST PURCHASE'
+        title: 'ASSORTED SOAPS'
     },
 
 ]
@@ -45,7 +43,7 @@ export const categories = [
 export const popularProducts = [
     {
         id: 1,
-        img: 'https://i.pinimg.com/736x/46/f0/b6/46f0b66a8574f60868d0388d271bab4a.jpg',
+        img: 'https://4.bp.blogspot.com/_JC1cgic6_D8/TI3Z2Z2rJCI/AAAAAAAAAV4/kJzS8ET6Ls4/s400/Aloe+Vera+Soap.JPG',
         name: 'Aloe Vera and Chamomile Soap ',
         description: 'Made with natural aloe vera and chamomile extracts, this soap helps soothe and calm irritated skin while leaving it feeling soft and refreshed.',
         price: 43
@@ -53,7 +51,7 @@ export const popularProducts = [
     },
     {
         id: 2,
-        img: 'https://i.pinimg.com/originals/91/12/b1/9112b17a158c02e58741400c2e924d81.jpg',
+        img: 'https://www.ccbeesnaturalproducts.ca/uploads/6/9/3/7/69373191/s973785511478968515_p94_i2_w1440.jpeg',
         name: 'Oatmeal and Honey Soap',
         description: 'Made with natural aloe vera and chamomile extracts, this soap helps soothe and calm irritated skin while leaving it feeling soft and refreshed.',
         price: 49

@@ -1,5 +1,6 @@
 import { Facebook, Instagram, Twitter, Home, Phone, Email } from "@mui/icons-material";
 import styled from "styled-components";
+import { Link } from 'react-router-dom'
 
 
 const Logo = styled.h1``;
@@ -70,7 +71,7 @@ const Footer = () => {
     <Container>
 <Left>
     <Logo>SOAP BOULANGERIE.</Logo>
-    <Desc>Soap Boulangerie description blah blah blah</Desc>
+    <Desc>Pure Organic Handcrafted Soaps </Desc>
     <SocialContainer>
         <SocialIcon color='3B5999'>
             <Facebook/>
@@ -91,10 +92,18 @@ const Footer = () => {
         Useful Links
     </Title>
     <List>
-        <ListItem>Home</ListItem>
-        <ListItem>Assorted Soaps</ListItem>
-        <ListItem>Fragrant Soaps</ListItem>
-        <ListItem>Facial Soaps</ListItem>
+        <ListItem>
+            <Link to='/'>Home</Link>
+        </ListItem>
+        <ListItem>
+            <Link to='/products'>Assorted Soaps</Link>
+        </ListItem>
+        <ListItem>
+        <Link to='/products'>Fragrant Soaps</Link>
+        </ListItem>
+        <ListItem>
+        <Link to='/products'>Facial Soaps</Link>
+        </ListItem>
     </List>
 </Center>
 <Right>
