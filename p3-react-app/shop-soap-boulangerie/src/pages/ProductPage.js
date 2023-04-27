@@ -1,10 +1,10 @@
 import styled from "styled-components";
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
-import { useState, useContext } from "react";
+import { useContext } from "react";
 import { ShopContext } from "../context/ShopContextProvider";
 import { popularProducts } from "../data";
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 /*Styling */
 const Container = styled.div``;
@@ -24,16 +24,13 @@ const InfoContainer = styled.div`
 flex: 1;
 padding: 0 50px;
 `;
-const Title = styled.h1`
-
-`;
+const Title = styled.h1``;
 const Desc = styled.p`
 margin: 20px 0;
 `;
 const Price = styled.span`
 font-size: 40px;
 `;
-
 const AddContainer = styled.div`
 display: flex;
 align-items: center;
@@ -69,21 +66,8 @@ cursor: pointer;
 /*End of Styling */
 
 const ProductPage = () => {
-    let id = 1;
-    
-    const [itemNumber, setItemNumber] = useState(1);
-    const itemAdd = (event) => {
-        setItemNumber(itemNumber + 1);
-    }
-    const itemSubtract = (event) => {
-        if(itemNumber > 0) {
-            setItemNumber(itemNumber - 1);
-        } 
-    }
-
     const {addToCart, removeFromCart, viewingId, cartItems} = useContext(ShopContext);
 
-  
     return (
     <Container>
         <Wapper>
@@ -114,4 +98,4 @@ const ProductPage = () => {
   )
 }
 
-export default ProductPage
+export default ProductPage;

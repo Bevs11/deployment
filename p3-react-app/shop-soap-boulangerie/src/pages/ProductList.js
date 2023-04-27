@@ -1,6 +1,6 @@
-import Categories from "../components/Categories"
-import Products from "../components/Products"
-import styled from "styled-components"
+import Categories from "../components/Categories";
+import Products from "../components/Products";
+import styled from "styled-components";
 
 const Container = styled.div``;
 const Title = styled.h1`
@@ -13,21 +13,16 @@ justify-content: space-between;
 const Filter = styled.div`
 margin: 20px;
 `;
-
 const FilterText = styled.span`
 font-size: 20px;
 font-weight: bold;
 margin-right: 10px;
 `;
-
 const Select = styled.select`
 padding: 10px;
 margin-right: 20px;
 `;
 const Option = styled.option``;
-
-
-
 
 const ProductList = () => {
   return (
@@ -65,4 +60,4 @@ const ProductList = () => {
   )
 }
 
-export default ProductList
+export default ProductList;

@@ -1,17 +1,15 @@
 import { Facebook, Instagram, Twitter, Home, Phone, Email } from "@mui/icons-material";
 import styled from "styled-components";
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 
 const Logo = styled.h1``;
 const Desc = styled.p`
 margin: 20px 0;
 `;
-
 const SocialContainer = styled.div`
 display: flex; 
 `;
-
 const SocialIcon = styled.h1`
 width: 40px;
 height: 40px;
@@ -23,7 +21,6 @@ align-items: center;
 justify-content: center;
 margin-right: 20px;
 `;
-
 const Container = styled.div`
 display: flex;
 `;
@@ -48,14 +45,10 @@ list-style:none;
 const ListItem = styled.li`
 margin-bottom: 10px;
 `;
-
-
 const Right = styled.div`
 flex:1;
 padding: 20px;
 `;
-
-
 const ContactItem = styled.div`
 display: flex;
 align-items: center;
@@ -82,10 +75,7 @@ const Footer = () => {
         <SocialIcon color='E60023'>
             <Twitter/>
         </SocialIcon>
-        
-
     </SocialContainer>
-
 </Left>
 <Center>
     <Title>
@@ -113,9 +103,8 @@ const Footer = () => {
     <ContactItem><Email style={{marginRight: '10px'}}/>soapboulangerie@gmail.com</ContactItem>
     <Payment src='https://mindanaotimes.com.ph/wp-content/uploads/2021/05/GCash-Logo-Transparent-PNG-1.png'/>
 </Right>
-
     </Container>
   )
-}
+};
 
-export default Footer
+export default Footer;

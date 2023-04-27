@@ -4,7 +4,6 @@ import { useState, useEffect, useContext } from "react";
 import { ShopContext } from "../context/ShopContextProvider";
 import { popularProducts } from '../data';
 
-
 const Container = styled.div`
 margin-left: 10px;
 `;
@@ -31,26 +30,25 @@ const OrderSummary = () => {
     const [shipping, setShipping] = useState(0);
     const [discount, setDiscount] = useState(0);
     const [grandTotal, setGrandTotal] = useState(0);
-    const {cartItems, addToCart, removeFromCart} = useContext(ShopContext);
+    const {cartItems} = useContext(ShopContext);
     const computeSubTotal = () => {
         let totalCost = 0;
-        for(let i = 0; i < popularProducts.length ; i++) {
-            
+        for(let i = 0; i < popularProducts.length ; i++) {            
             if(cartItems[i+1] !== 0){
                 totalCost += cartItems[i+1] * popularProducts[i].price;
             }
         }
         return totalCost;
-    }
+    };
     
     useEffect(()=> {
         setSubTotal(computeSubTotal());
-    }, [cartItems])
+    }, [cartItems]);
 
     useEffect(()=> {
         isEmpty();
         setGrandTotal(subTotal + shipping - discount);
-    }, [subTotal, shipping, discount])
+    }, [subTotal, shipping, discount]);
 
     function isEmpty() {
         if(subTotal !== 0) {
@@ -60,10 +58,9 @@ const OrderSummary = () => {
             setDiscount(0);
             setShipping(0);
         }
-    }
+    };
 
   return (
-
     <Container>
        <Summary>
                     <SummaryTitle>ORDER SUMMARY</SummaryTitle>
@@ -82,13 +79,10 @@ const OrderSummary = () => {
                     <SummaryItem type='total'>
                         <SummaryItemText>Total</SummaryItemText>
                         <SummaryItemPrice>P {grandTotal}.00</SummaryItemPrice>
-                    </SummaryItem>
-                  
-
-
+                    </SummaryItem>               
                 </Summary> 
     </Container>
   )
-}
+};
 
-export default OrderSummary
+export default OrderSummary;

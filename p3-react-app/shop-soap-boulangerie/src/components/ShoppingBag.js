@@ -4,8 +4,6 @@ import RemoveIcon from '@mui/icons-material/Remove';
 import { useState, useEffect, useContext } from "react";
 import { ShopContext } from "../context/ShopContextProvider";
 
-
-
 /*Styling */
 const Container = styled.div``;
 const Info = styled.div``;
@@ -34,7 +32,6 @@ justify-content: space-around;
 `;
 const ProductName = styled.div``;
 const ProductId = styled.div``;
-
 const ProductAmountContainer = styled.div`
 display: flex;
 align-items:center;
@@ -51,32 +48,17 @@ font-size: 30px;
 const Hr = styled.hr`
 margin: 20px 0;
 `;
-
 /*End of Styling */
 
 const ShoppingBag = (props, data) => {
     const {cartItems, addToCart, removeFromCart} = useContext(ShopContext);
-
     const [itemNumber, setItemNumber] = useState(1);
     const [partialTotal, setPartialTotal] = useState(45 * itemNumber);
 
-    
-
-    const itemAdd = (event) => {
-        setItemNumber(itemNumber + 1);
-    
-    }
-    const itemSubtract = (event) => {
-        if(itemNumber > 0) {
-            setItemNumber(itemNumber - 1);
-    
-        } 
-    }
     useEffect(() => {
         setPartialTotal(cartItems[props.id]*props.price);
     }, [removeFromCart, addToCart]);
 
-    
     return (
     <Container>
         <Info>
@@ -111,4 +93,4 @@ const ShoppingBag = (props, data) => {
   )
 }
 
-export default ShoppingBag
+export default ShoppingBag;

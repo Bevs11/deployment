@@ -1,5 +1,5 @@
-import styled from "styled-components"
-import { Link } from 'react-router-dom'
+import styled from "styled-components";
+import { Link } from 'react-router-dom';
 
 const Container = styled.div`
 flex:1;
@@ -49,4 +49,4 @@ const CategoryItem = ({item}) => {
   )
 }
 
-export default CategoryItem
+export default CategoryItem;

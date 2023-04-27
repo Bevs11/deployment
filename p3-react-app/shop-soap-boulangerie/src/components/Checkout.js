@@ -1,5 +1,7 @@
-import { useReducer, useState, useEffect } from "react";
-import styled from "styled-components"
+import { useReducer, useState, useEffect, useContext } from "react";
+import styled from "styled-components";
+import { Link, useNavigate } from 'react-router-dom';
+import { ShopContext } from "../context/ShopContextProvider";
 
 /* Styling*/
 const Container = styled.div`
@@ -56,7 +58,6 @@ color: red;
 `;
 /*Styling End*/
 
-let userInfo = {};
 const initialState = {
   firstname: '',
   lastname: '',
@@ -65,25 +66,23 @@ const initialState = {
   address: ''
 };
 
+
 function reducer(state, action) {
   console.log(action);
   return {...state, [action.input] : action.value};
-}
-
-
-
-
+};
 
 const Checkout = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const regexNumber = /\d/;
   const regexLetters = /[A-Za-z]/;
   const regexSpecialCharacter = /[-!$%^&*()_+|~=`{}\[\]:";'<>?,.\/]/;
-  // console.log(state);
-  // input validation
+    // input validation
+  
+  const {getUserInformation} = useContext(ShopContext);
+  const [errorMessage, setErrorMessage] = useState('Please fill out all fields');
 
-  const [errorMessage, setErrorMessage] = useState('Please fill out all fields')
-
+  let  navigate = useNavigate();
   function isValid(userInput) {
     if(userInput.firstname !== '' && userInput.lastname !== '' && userInput.email !== '' && userInput.contact !== '' && userInput.address !== '') {
       if(!regexNumber.test(userInput.firstname) && !regexNumber.test(userInput.firstname) && userInput.firstname.length > 3 && userInput.lastname.length > 3 && !regexLetters.test(userInput.contact) && !regexSpecialCharacter.test(userInput.firstname) && !regexSpecialCharacter.test(userInput.lasttname)){
@@ -101,16 +100,16 @@ const Checkout = () => {
 
   useEffect(()=> {
     isValid(state);
-  }, [state])
+  }, [state]);
 
   function handleClick(e) {
     e.preventDefault();
     if (isValid(state)){
-      alert(`Hey ${state.firstname.toUpperCase()} ${state.lastname.toUpperCase()}, your order has been send. Please check your email for your Confirmation Number. Thank you for shopping! `);
-      userInfo = state;
-      console.log(userInfo);
+      getUserInformation(state);
+      navigate('/ordersuccessful');
+
     }
-  }
+  };
 
   function onChange(e) {
     const action = {
@@ -118,7 +117,7 @@ const Checkout = () => {
       value: e.target.value
     }
     dispatch(action);
-  }
+  };
 
   return (
     <Container>
@@ -161,13 +160,15 @@ const Checkout = () => {
             onChange={onChange}
             required/>
             <ErrorMessage>{errorMessage}</ErrorMessage>
-            <Button onClick={handleClick}>ORDER</Button>
+            <Button >
+              <Link to='/ordersuccessful' onClick={handleClick}>ORDER</Link>
+            </Button>
             
         </Form>
     </Wrapper>
 
 </Container>
   )
-}
+};
 
-export default Checkout
+export default Checkout;

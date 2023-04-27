@@ -3,7 +3,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import SearchIcon from '@mui/icons-material/Search';
 import { useContext, useState } from "react";
 import { ShopContext } from "../context/ShopContextProvider";
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 const Info = styled.div`
 opacity:0;
@@ -20,7 +20,6 @@ justify-content: center;
 transition: all 0.5s ease;
 cursor: pointer;
 `;
-
 const Container = styled.div`
 flex:1;
 margin: 5px;
@@ -37,7 +36,6 @@ flex-direction: column;
   opacity:1;
 }
 `;
-
 const Circle = styled.div`
 width: 200px;
 height: 200px;
@@ -49,7 +47,6 @@ const Image = styled.img`
 height: 75%;
 z-index: 2;
 `;
-
 const Button = styled.button`
 width: 40px;
 height: 40px;
@@ -71,14 +68,7 @@ margin-bottom: 10px;
 `;
 
 const Product = ({item}) => {
-  
-  
   const { addToCart, settingId} = useContext(ShopContext);
-  // const itemChosen = () => {
-  //   setViewId(item.id);
-  //   console.log(viewId);
-  // }
-/*Not working yet */
 
   return (
     <Container>
@@ -90,14 +80,13 @@ const Product = ({item}) => {
           <ShoppingCartIcon/>                 
         </Button>
         <Button onClick={() => {settingId(item.id)}}>
-          <Link to='/productpage'>
+          <Link to='/products/productpage'>
           <SearchIcon/>
         </Link>
         </Button>
       </Info>
     </Container>
   )
-}
+};
 
-
-export default Product
+export default Product;

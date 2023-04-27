@@ -1,4 +1,4 @@
-import { Send } from '@mui/icons-material'
+import { Send } from '@mui/icons-material';
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -9,7 +9,6 @@ align-items: center;
 justify-content: center;
 flex-direction: column;
 `;
-
 const Title = styled.h1`
 font-size: 70px;
 margin: 20px;
@@ -37,7 +36,6 @@ border: none;
 background-color: pink;
 `;
 
-
 const NewsLetter = () => {
   return (
     <Container>
@@ -51,6 +49,6 @@ const NewsLetter = () => {
         </InputContainer>
     </Container>
   )
-}
+};
 
-export default NewsLetter
+export default NewsLetter;

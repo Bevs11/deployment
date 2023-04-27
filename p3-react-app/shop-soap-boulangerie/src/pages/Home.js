@@ -1,7 +1,5 @@
-import Slider from '../components/Slider'
-import Categories from '../components/Categories'
-
-
+import Slider from '../components/Slider';
+import Categories from '../components/Categories';
 
 const Home = () => {
   return (
@@ -12,4 +10,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default Home;
