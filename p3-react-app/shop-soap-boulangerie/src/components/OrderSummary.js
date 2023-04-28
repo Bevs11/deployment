@@ -31,6 +31,8 @@ const OrderSummary = () => {
     const [discount, setDiscount] = useState(0);
     const [grandTotal, setGrandTotal] = useState(0);
     const {cartItems} = useContext(ShopContext);
+    
+        // totalCost is the sum of all items added in the cart
     const computeSubTotal = () => {
         let totalCost = 0;
         for(let i = 0; i < popularProducts.length ; i++) {            
@@ -50,6 +52,7 @@ const OrderSummary = () => {
         setGrandTotal(subTotal + shipping - discount);
     }, [subTotal, shipping, discount]);
 
+        // Checks for items inside the cart. If empty, discound and shipping automatically turns 0
     function isEmpty() {
         if(subTotal !== 0) {
             setDiscount(30);

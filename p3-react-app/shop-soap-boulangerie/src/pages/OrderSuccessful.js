@@ -20,7 +20,7 @@ font-size: 30px;
 `;
 
 const OrderSuccessful = () => {
-  const {userInformation, cartItems} = useContext(ShopContext);
+  const {userInformation} = useContext(ShopContext);
   let state = userInformation;
 
   return (
@@ -28,11 +28,11 @@ const OrderSuccessful = () => {
         <Title>ORDER SUCCESSFUL</Title>
         <Desc>
           <Info>
-          Hey {state.firstname.toUpperCase()}, your order has been send. Please check your email for your Confirmation Number. Thank you for shopping!
+          Hey {state.firstname.toUpperCase()}, your order has been sent. Please check your email for your Confirmation Number. Thank you for shopping!
           </Info>
         </Desc>
     </Container>
   )
-}
+};
 
 export default OrderSuccessful;

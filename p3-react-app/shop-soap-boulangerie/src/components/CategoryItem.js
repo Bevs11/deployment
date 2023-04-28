@@ -35,6 +35,7 @@ cursor: pointer;
 font-weight: bold;
 `;
 
+  //Component for Categories
 const CategoryItem = ({item}) => {
   return (
     <Container>

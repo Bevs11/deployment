@@ -8,6 +8,6 @@ const Home = () => {
       <Categories/> 
     </div>
   )
-}
+};
 
 export default Home;

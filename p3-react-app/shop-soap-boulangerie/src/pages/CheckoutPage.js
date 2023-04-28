@@ -38,6 +38,6 @@ const CheckoutPage = () => {
         <Checkout/>
     </Container>
   )
-}
+};
 
 export default CheckoutPage;

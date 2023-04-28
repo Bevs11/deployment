@@ -72,8 +72,11 @@ background-color: pink;
 cursor: pointer;
 `;
 
+    // Component for Home page that displays highlights
 const Slider = () => {
     const [slideIndex, setSlideIndex] = useState(0);
+    
+        //Used to check direction of slider arrow
     const handleClick = (direction) => {
         if (direction === 'left'){
             setSlideIndex(slideIndex > 0 ? slideIndex-1 : 2);
@@ -108,6 +111,6 @@ const Slider = () => {
         </Arrow>
     </Container>
   )
-}
+};
 
 export default Slider;

@@ -50,10 +50,10 @@ margin: 20px 0;
 `;
 /*End of Styling */
 
-const ShoppingBag = (props, data) => {
+    //Component that displays all items inside the cart
+const ShoppingBag = (props) => {
     const {cartItems, addToCart, removeFromCart} = useContext(ShopContext);
-    const [itemNumber, setItemNumber] = useState(1);
-    const [partialTotal, setPartialTotal] = useState(45 * itemNumber);
+    const [partialTotal, setPartialTotal] = useState();
 
     useEffect(() => {
         setPartialTotal(cartItems[props.id]*props.price);

@@ -10,6 +10,7 @@ justify-content: center;
 font-size: 14px;
 `;
 
+// Component for the header that displays discounts
 const Announcement = () => {
   return (
     <Container>Super Deal! Free Shipping on Orders Over 500 Pesos</Container>

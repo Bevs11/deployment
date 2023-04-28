@@ -8,6 +8,7 @@ display: flex;
 flex-wrap: wrap
 `;
 
+  //Component for the ProductList that displays all available products for sale
 const Products = () => { 
   return (
     <Container>

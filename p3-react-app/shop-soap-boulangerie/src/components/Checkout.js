@@ -72,6 +72,7 @@ function reducer(state, action) {
   return {...state, [action.input] : action.value};
 };
 
+// Component for the CheckoutPage that includes the for to be filled out 
 const Checkout = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const regexNumber = /\d/;
@@ -82,7 +83,10 @@ const Checkout = () => {
   const {getUserInformation} = useContext(ShopContext);
   const [errorMessage, setErrorMessage] = useState('Please fill out all fields');
 
+    // Used to navigate to OrderSuccessful page after clicking Order button
   let  navigate = useNavigate();
+
+    //Used to check validity of Form inputs
   function isValid(userInput) {
     if(userInput.firstname !== '' && userInput.lastname !== '' && userInput.email !== '' && userInput.contact !== '' && userInput.address !== '') {
       if(!regexNumber.test(userInput.firstname) && !regexNumber.test(userInput.firstname) && userInput.firstname.length > 3 && userInput.lastname.length > 3 && !regexLetters.test(userInput.contact) && !regexSpecialCharacter.test(userInput.firstname) && !regexSpecialCharacter.test(userInput.lasttname)){
@@ -102,15 +106,16 @@ const Checkout = () => {
     isValid(state);
   }, [state]);
 
+    // Function to navigate page to OrderSuccessful page
   function handleClick(e) {
     e.preventDefault();
     if (isValid(state)){
       getUserInformation(state);
       navigate('/ordersuccessful');
-
     }
   };
 
+    // event handler for all inputs
   function onChange(e) {
     const action = {
       input: e.target.name,
@@ -162,11 +167,9 @@ const Checkout = () => {
             <ErrorMessage>{errorMessage}</ErrorMessage>
             <Button >
               <Link to='/ordersuccessful' onClick={handleClick}>ORDER</Link>
-            </Button>
-            
+            </Button>            
         </Form>
     </Wrapper>
-
 </Container>
   )
 };

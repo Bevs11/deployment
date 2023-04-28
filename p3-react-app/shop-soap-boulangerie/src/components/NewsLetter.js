@@ -36,6 +36,7 @@ border: none;
 background-color: pink;
 `;
 
+  //Component that Opt in customer who wants to receive newsletters
 const NewsLetter = () => {
   return (
     <Container>

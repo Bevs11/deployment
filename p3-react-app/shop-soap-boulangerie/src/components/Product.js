@@ -67,6 +67,7 @@ const Title = styled.h3`
 margin-bottom: 10px;
 `;
 
+  //Component that styles a product
 const Product = ({item}) => {
   const { addToCart, settingId} = useContext(ShopContext);
 

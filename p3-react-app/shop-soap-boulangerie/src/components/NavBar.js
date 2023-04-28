@@ -46,6 +46,7 @@ width: 90%;
 height: 90%;
 `;
 
+    //Component for header containing name, logo and links
 const NavBar = () => {
   return (
     <Container>

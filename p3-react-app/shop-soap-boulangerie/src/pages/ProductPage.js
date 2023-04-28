@@ -96,6 +96,6 @@ const ProductPage = () => {
         </Wapper>
     </Container>
   )
-}
+};
 
 export default ProductPage;

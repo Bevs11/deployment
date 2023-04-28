@@ -8,6 +8,7 @@ padding: 20px;
 justify-content: space-between;
 `;
 
+  //Component for the Products List Page to show categories
 const Categories = () => {
   return (
     <Container>{categories.map(item=> 

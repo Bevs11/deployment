@@ -58,6 +58,6 @@ const ProductList = () => {
       <Products/>
     </Container>
   )
-}
+};
 
 export default ProductList;

@@ -59,6 +59,7 @@ margin-top: 10px;
 height: 20px;
 `;
 
+    //Contains all footer items
 const Footer = () => {
   return (
     <Container>
